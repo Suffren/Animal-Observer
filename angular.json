@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "angular-observer": {
@@ -123,6 +123,12 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-observer"
+    }
+  },
+  "defaultProject": "angular-observer",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
