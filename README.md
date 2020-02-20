@@ -1,1 +1,1 @@
-Wild Mammalia Observer
+Mammalia Observer

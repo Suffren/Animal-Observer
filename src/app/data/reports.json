@@ -1,0 +1,23 @@
+[
+  {
+    "animal_type": "squirel",
+    "gender": "male",
+    "comment": "Apercu à coté de chez moi, en haut d'un chêne",
+    "localisation": "Brest",
+    "time": "2019/12/02"
+  },
+  {
+    "animal_type": "deer",
+    "gender": "",
+    "comment": "",
+    "localisation": "Brest",
+    "time": "2019/11/12"
+  },
+  {
+    "animal_type": "boar",
+    "gender": "female",
+    "comment": "",
+    "localisation": "Brest",
+    "time": "2019/10/27"
+  }
+]

@@ -1,0 +1,22 @@
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+
+:host {
+    box-sizing: border-box;
+}
+h1 {
+    font-weight: 700;
+    font-family: 'MontserratBold', sans-serif;
+    font-style: normal;
+}
+@font-face {
+    font-family: "MontserratBold";
+    src: url("./fonts/Montserrat-Bold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "MontserratRegular";
+    src: url("./fonts/Montserrat-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "MontserratLight";
+    src: url("./fonts/Montserrat-Light.ttf") format("truetype");
+}

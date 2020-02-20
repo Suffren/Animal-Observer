@@ -1,0 +1,7 @@
+<div class="home__container">
+    <app-mammal-list (onSelectAnimal)="showForm($event)" style="width: 30%"></app-mammal-list>
+
+    <app-report-form (onSubmitForm)="addReport($event); do.onSubmit()" [hidden]="!animalIsSelected" style="width: 30%" #do 
+    ></app-report-form>
+
+</div>

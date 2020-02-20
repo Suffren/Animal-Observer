@@ -1,0 +1,41 @@
+<div [hidden]="submitted">
+    <h3>Formulaire:</h3>
+    <form #reportForm="ngForm" (ngSubmit)="onSubmit(); 
+    reportForm.reset()">
+        <div class="form-group">
+            <label for="gender">Sexe supposé de l'animal:</label>
+            <select class="form-control"  id="gender" [(ngModel)]="report.gender" name="gender">
+                <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="localisation">Lieu*</label>
+            <input type="text" class="form-control" id="localisation" placeholder="Saisir un lieux"
+            [(ngModel)]="report.localisation" name="localisation" required #localisation="ngModel">
+            <div [hidden]="localisation.valid || localisation.pristine" class="alert alert-danger">
+                Le lieux est requis
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="time">Heure*</label>
+            <input type="text" class="form-control" id="time" placeholder="Choisissez une heure"
+            [(ngModel)]="report.time" name="time" required #time="ngModel">
+            <div [hidden]="time.valid || time.pristine" class="alert alert-danger">
+                Une heure est requise
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Commentaire</label>
+            <textarea class="form-control" cols="4" placeholder="Description plus précise de l'animal"
+            name="comment" [(ngModel)]="report.comment"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success" [disabled]="!reportForm.form.valid">Submit</button>
+    </form>
+
+</div>
+
+<div *ngIf="submitted">Envoyé !</div>
