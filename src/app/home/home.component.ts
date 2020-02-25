@@ -7,8 +7,8 @@ import { ReportService } from '../shared/services/report.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  animalIsSelected: boolean = false;
-  form: object = {};  
+  showForm: boolean = false;
+  submitted: boolean = false;
   animalType: string;
   previousAnimal: string;
 
@@ -16,15 +16,17 @@ export class HomeComponent implements OnInit {
     private reportService: ReportService
   ) { }
 
-  ngOnInit(): void {   }
+  ngOnInit(): void { }
 
-  showForm(animalType: string): void {
+  selectAnimal(animalType: string): void {
     this.animalType = animalType;
-    this.animalIsSelected = true;
+    this.showForm = true;
+    this.submitted = false;
   }
 
-  addReport(form: object): void {
-    this.form = form;   
-    this.reportService.updateReports({ animal_type: this.animalType, ...this.form });
+  submitReport(form: object): void {
+    this.reportService.updateReports({ animal_type: this.animalType, ...form });
+    this.submitted = true;
+    this.showForm = false;
   }
 }
