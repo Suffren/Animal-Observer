@@ -4,7 +4,8 @@
         <div class="form-group">
             <label for="gender">Sexe supposé de l'animal:</label>
             <select class="form-control"  id="gender" formControlName="gender">
-                <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
+                <option [ngValue]="null" disabled selected>Sexe de l'animal</option>
+                <option *ngFor="let gender of genders" [value]="gender">{{gender.fr_fr}}</option>
             </select>
         </div>
 

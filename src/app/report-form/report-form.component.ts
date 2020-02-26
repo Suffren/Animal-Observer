@@ -9,13 +9,13 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 })
 export class ReportFormComponent implements OnInit {
   submitted: boolean = false;
-  genders: Array<string> = ['male', 'female'];
+  genders: Array<object> = [{gender: 'male', fr_fr: 'Mâle'}, {gender: 'female', fr_fr: 'Femelle'}, {gender: 'unknown', fr_fr: 'Je ne sais pas'}];
   reportForm: FormGroup;
   @Output() onSubmitForm: EventEmitter<Report> = new EventEmitter();
 
   constructor(private fb: FormBuilder) {
     this.reportForm = this.fb.group({
-      gender:[''],
+      gender: [null],
       localisation: ['', Validators.required],
       time: ['', Validators.required],
       comment: ['']
