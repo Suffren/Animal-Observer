@@ -2,12 +2,12 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Mammals } from '../../assets/mammals';
 
 @Component({
-  selector: 'app-mammal-list',
-  templateUrl: './mammal-list.component.html',
-  styleUrls: ['./mammal-list.component.scss']
+  selector: 'app-animal-list',
+  templateUrl: './animal-list.component.html',
+  styleUrls: ['./animal-list.component.scss']
 })
-export class MammalListComponent implements OnInit {
-  mammals = Mammals;
+export class AnimalListComponent implements OnInit {
+  animals = Mammals;
   selectedAnimal: string;
   @Output() onSelectAnimal: EventEmitter<string> = new EventEmitter();
 

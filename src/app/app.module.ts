@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MammalListComponent } from './mammal-list/mammal-list.component';
+import { AnimalListComponent } from './animal-list/animal-list.component';
 import { HomeComponent } from './home/home.component';
 import { ReportFormComponent } from './report-form/report-form.component';
 import { ReportsComponent } from './reports/reports.component';
@@ -13,7 +13,7 @@ import { ReportsComponent } from './reports/reports.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MammalListComponent,
+    AnimalListComponent,
     HomeComponent,
     ReportFormComponent,
     ReportsComponent

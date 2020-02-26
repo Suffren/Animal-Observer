@@ -1,6 +1,0 @@
-<h3>Mammifère observé:</h3>
-<div class="animal__list">
-    <div class="animal__elt" *ngFor="let mammal of mammals">
-        <button class="animal__btn" [ngClass]="{ 'selected': mammal.name === selectedAnimal }" (click)="selectAnimal(mammal.name)" >{{ mammal.fr_fr }}</button>
-    </div>
-</div>
