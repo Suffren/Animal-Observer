@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReportService } from '../shared/services/report.service';
+import Report from '../shared/interfaces/interfaces';
 
 @Component({
   selector: 'app-home',
@@ -24,8 +25,8 @@ export class HomeComponent implements OnInit {
     this.submitted = false;
   }
 
-  submitReport(form: object): void {
-    this.reportService.updateReports({ animal_type: this.animalType, ...form });
+  submitReport(form: Report): void {
+    this.reportService.addReport({ animal_type: this.animalType, ...form });
     this.submitted = true;
     this.showForm = false;
   }

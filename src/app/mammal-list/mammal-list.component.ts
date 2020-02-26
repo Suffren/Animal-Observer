@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Mammals } from '../data/mammals';
+import { Mammals } from '../../assets/mammals';
 
 @Component({
   selector: 'app-mammal-list',

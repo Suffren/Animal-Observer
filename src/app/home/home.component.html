@@ -3,4 +3,5 @@
 
     <app-report-form (onSubmitForm)="submitReport($event)" [hidden]="submitted" *ngIf="showForm" style="width: 30%"></app-report-form>
     <div *ngIf="submitted">Envoyé !</div>
+    <a routerLink="/reports" routerLinkActive="active">Voir mes observations</a>
 </div>

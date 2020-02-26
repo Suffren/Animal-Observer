@@ -1,0 +1,8 @@
+<div *ngFor="let report of reports">
+    <p>{{ report.animal_type }}</p>
+    <p>{{ report.gender }}</p>
+
+    <p>{{ report.localisation }}</p>
+    <p>{{ report.time }}</p>
+    <p>{{ report.comment || 'Pas de commentaire' }}</p>
+</div>

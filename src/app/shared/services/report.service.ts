@@ -1,14 +1,22 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import Report from '../interfaces/interfaces';
+import { Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReportService {
-  reports = [];
+  reports: Array<Report> = [];
+  cachedReports = 'assets/reports.json';
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  updateReports(report: Object) {
+  fetchReports(): Subscription {
+    return this.http.get(this.cachedReports).subscribe( (data: Array<Report>) => this.reports = data);
+  }
+
+  addReport(report: Report) {
     this.reports.push(report);
   }
 
