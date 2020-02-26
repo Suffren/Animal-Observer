@@ -14,6 +14,16 @@ const routes: Routes = [
     path: 'reports',
     component: ReportsComponent,
     data: { title: 'Mes observations' }
+  },
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: '/home',
+    pathMatch: 'full'
   }
 ];
 
