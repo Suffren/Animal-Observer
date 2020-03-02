@@ -1,0 +1,6 @@
+<div *ngFor="let animal of animals">
+    <p>{{ animal.fr_fr }}</p>
+    <a [routerLink]="['/animals-info', animal.name]">Voir</a>
+</div>
+
+<router-outlet></router-outlet>

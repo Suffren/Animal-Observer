@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AnimalsInfoModuleModule } from './animals-info/animals-info.module'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { ReportsComponent } from './reports/reports.component';
   ],
   imports: [
     BrowserModule,
+    AnimalsInfoModuleModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule
