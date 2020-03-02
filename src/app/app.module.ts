@@ -10,6 +10,7 @@ import { AnimalListComponent } from './animal-list/animal-list.component';
 import { HomeComponent } from './home/home.component';
 import { ReportFormComponent } from './report-form/report-form.component';
 import { ReportsComponent } from './reports/reports.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ReportsComponent } from './reports/reports.component';
     AnimalListComponent,
     HomeComponent,
     ReportFormComponent,
-    ReportsComponent
+    ReportsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

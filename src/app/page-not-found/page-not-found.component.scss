@@ -1,0 +1,5 @@
+@import 'src/sass/_mixins.scss';
+
+.center_flex {
+    @include center_flex;
+}
