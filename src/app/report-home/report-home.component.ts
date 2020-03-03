@@ -3,11 +3,11 @@ import { ReportService } from '../shared/services/report.service';
 import Report from '../shared/interfaces/interfaces';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-report-home',
+  templateUrl: './report-home.component.html',
+  styleUrls: ['./report-home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class ReportHomeComponent implements OnInit {
   showForm: boolean = false;
   submitted: boolean = false;
   animalType: string;

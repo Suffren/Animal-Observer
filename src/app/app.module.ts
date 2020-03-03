@@ -7,7 +7,7 @@ import { AnimalsInfoModuleModule } from './animals-info/animals-info.module'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AnimalListComponent } from './animal-list/animal-list.component';
-import { HomeComponent } from './home/home.component';
+import { ReportHomeComponent } from './report-home/report-home.component';
 import { ReportFormComponent } from './report-form/report-form.component';
 import { ReportsComponent } from './reports/reports.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -16,7 +16,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   declarations: [
     AppComponent,
     AnimalListComponent,
-    HomeComponent,
+    ReportHomeComponent,
     ReportFormComponent,
     ReportsComponent,
     PageNotFoundComponent
