@@ -11,6 +11,7 @@ import { ReportHomeComponent } from './report-home/report-home.component';
 import { ReportFormComponent } from './report-form/report-form.component';
 import { ReportsComponent } from './reports/reports.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ReportHomeComponent,
     ReportFormComponent,
     ReportsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

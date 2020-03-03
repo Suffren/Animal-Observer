@@ -2,10 +2,16 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ReportHomeComponent } from './report-home/report-home.component';
 import { ReportsComponent } from './reports/reports.component';
+import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
+  {
+    path: 'home',
+    component: HomeComponent,
+    data: { title: 'Accueil' }
+  },
   {
     path: 'report',
     component: ReportHomeComponent,
