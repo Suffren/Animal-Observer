@@ -8,20 +8,12 @@ export const Mammals = [
     "fr_fr": "Cerf"
   },
   {
-    "name": "suede",
-    "fr_fr": "Daim"
-  },
-  {
     "name": "boar",
     "fr_fr": "Sanglier"
   },
   {
-    "name": "rabit",
+    "name": "rabbit",
     "fr_fr": "Lapin"
-  },
-  {
-    "name": "ermine",
-    "fr_fr": "Hermine"
   },
   {
     "name": "bat",
