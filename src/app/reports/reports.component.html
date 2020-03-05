@@ -1,8 +1,16 @@
-<div *ngFor="let report of reports">
-    <p>{{ report.animal_type }}</p>
-    <p>{{ report.gender }}</p>
-
-    <p>{{ report.localisation }}</p>
-    <p>{{ report.time }}</p>
-    <p>{{ report.comment || 'Pas de commentaire' }}</p>
+<div class="container" style="padding: 20px;">
+    <div class="notification is-warning" *ngFor="let report of reports">
+        <div class="media">
+            <figure class="media-left">
+                <img class="image is-64x64" [src]="'../assets/icons/'+ report.animal_type + '.svg'" alt="{{report.animal_type}}">
+            </figure>
+            <div class="media-content">
+                <div class="content">
+                    <strong>{{ report.time }}</strong> <small>&nbsp;{{ report.localisation }}</small>
+                    <br>
+                    <i>{{ report.comment || 'Pas de commentaire' }}</i>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

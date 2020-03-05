@@ -1,0 +1,6 @@
+@import 'src/sass/_variables.scss';
+
+#navbarBasicExample .navbar-item.active {
+    color: $tertiary;
+    font-weight: 600;
+}

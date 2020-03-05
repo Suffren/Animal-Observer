@@ -1,11 +1,13 @@
+@import 'src/sass/_variables.scss';
+
 .home__container {
     background: linear-gradient(90deg, #000 2%, transparent), url('src/assets/images/deer.jpg');
-    height: calc(100% - 52px);
+    height: calc(100vh - 52px);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    color: rgb(240, 238, 238);
+    color: $secondary;
     & .home__text {
         display: flex;
         justify-content: center;
