@@ -1,8 +1,11 @@
+@import 'src/sass/_variables.scss';
+
 body {
-    overflow: hidden;
     box-sizing: border-box;
-    height: 100vh;
     margin: 0;
+    background-color: $primary;
+    min-height: 100vh;
+    display: block;
     a {
         outline: 0;
     }
