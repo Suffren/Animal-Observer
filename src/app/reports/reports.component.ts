@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import Report from '../shared/interfaces/interfaces';
 import { ReportService } from '../shared/services/report.service';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
+registerLocaleData(localeFr, 'en');
 
 @Component({
   selector: 'app-reports',
