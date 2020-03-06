@@ -2,43 +2,43 @@
   {
     "animal_type": "bat",
     "gender": "",
-    "comment": "N'en suis pas sûr...",
+    "comment": "J'en ai aperçu quand je suis tombé dans un puit, proche de chez moi.",
     "localisation": "Saint-brieuc",
-    "time": "Wen Feb 02 2019 23:02:00 GMT+0200"
+    "time": "2019-10-22T01:00:00-05:00"
   },
   {
     "animal_type": "rabbit",
     "gender": "",
     "comment": "Pas sur du sexe de l'animal",
     "localisation": "Nantes",
-    "time": "Thu Sep 12 2019 00:00:00 GMT+0200"
+    "time": "2019-09-07T01:00:00-05:00"
   },
   {
-    "animal_type": "boar",
+    "animal_type": "squirrel",
     "gender": "male",
     "comment": "Apercu à coté de chez moi, en haut d'un chêne",
     "localisation": "Brest",
-    "time": "Sun Dec 02 2019 00:00:00 GMT+0100"
+    "time": "2020-02-19T01:00:00-05:00"
   },
   {
     "animal_type": "deer",
     "gender": "",
     "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "localisation": "Brest",
-    "time": "Tue Nov 12 2019 00:00:00 GMT+0100"
+    "time": "2019-11-05T01:00:00-05:00"
   },
   {
-    "animal_type": "squirrel",
+    "animal_type": "boar",
     "gender": "female",
     "comment": "",
     "localisation": "Brest",
-    "time": "Mon Oct 07 2019 00:00:00 GMT+0200"
+    "time": "2020-04-22T01:00:00-05:00"
   } ,
   {
     "animal_type": "fox",
     "gender": "female",
     "comment": "",
     "localisation": "Saint-brieuc",
-    "time": "Wen Feb 27 2019 00:00:00 GMT+0200"
+    "time": "2020-01-09T01:00:00-05:00"
   }
 ]
