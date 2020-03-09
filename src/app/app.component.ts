@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ReportService } from './shared/services/report.service';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +8,5 @@ import { ReportService } from './shared/services/report.service';
 export class AppComponent {
   title = 'Animal observer';
 
-  constructor(private reportService: ReportService)  {
-    this.reportService.fetchReports();
-  }
-
+  constructor()  {}
 }
