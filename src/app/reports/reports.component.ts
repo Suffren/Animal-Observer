@@ -17,7 +17,10 @@ export class ReportsComponent implements OnInit {
   constructor(private reportService: ReportService) { }
 
   ngOnInit(): void {
-    this.reports = this.reportService.getReports();
+    this.reportService.fetchReports().subscribe( (reports) => {
+      this.reports = reports.sort( (previousReport: Report, nextReport: Report) =>
+        new Date(nextReport.time).getTime() - new Date(previousReport.time).getTime()
+      );
+    });
   }
-
 }

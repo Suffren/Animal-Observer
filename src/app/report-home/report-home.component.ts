@@ -26,8 +26,9 @@ export class ReportHomeComponent implements OnInit {
   }
 
   submitReport(form: Report): void {
-    this.reportService.addReport({ animal_type: this.animalType, ...form });
-    this.submitted = true;
-    this.showForm = false;
+    this.reportService.addReport({ animal_type: this.animalType, ...form }).subscribe( res => {
+      this.submitted = true;
+      this.showForm = false;
+    });
   }
 }
