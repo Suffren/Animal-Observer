@@ -1,3 +1,12 @@
-Animal Observer
+# Animal Observer
 
-Web app permettant de signaler certains mammifères dans le but de les recenser.
+## Overview
+**Animal Observer**, prototype web app to report certain animals in order to identify them.
+
+#### Keywords
+* Angular
+* Typescript
+* RxJS
+* Webpack
+* Responsive app
+* In-memory database
