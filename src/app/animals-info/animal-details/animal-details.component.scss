@@ -1,0 +1,10 @@
+#details__content {
+    margin-right: 15%;
+    margin-left: 15%;
+    text-align: justify;
+}
+@media screen and (max-width: 729px) {
+    #details__content {
+        margin: 5%;
+    }
+}

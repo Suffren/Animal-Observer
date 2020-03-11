@@ -1,0 +1,15 @@
+@import 'src/sass/_variables.scss';
+
+.button.is-rounded.active {
+    background-color: $tertiary;
+    color: black;
+    font-weight: 600;
+}
+#animals-info-list {
+    margin-left: 15%;
+}
+@media screen and (max-width: 729px) {
+    #animals-info-list {
+        margin-left: 5%;
+    }
+}

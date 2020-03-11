@@ -1,3 +1,22 @@
-<p>animal-details works!</p>
-<p *ngIf="selectedAnimal">animal selected: {{ selectedAnimal }}</p>
-<button (click)="goToAnimalDetails()">back</button>
+<div id="details__content" class="has-text-light" *ngIf="animal">
+    <section>
+        <article>
+            <header>
+                <h2 class="is-size-1-desktop has-text-warning m-t-lg">{{ animal.fr_fr }}</h2>
+                <span class="is-italic is-size-7-touch m-r-lg">Ordre: {{ animal.order }}</span>
+                <span class="is-italic is-size-7-touch m-r-lg">Famille: {{ animal.familly }}</span>
+                <span class="is-italic is-size-7-touch">Taille (H): {{ animal.height }}</span>
+            </header>
+
+            <h3 class="is-size-5-desktop m-t-md">Description:</h3>
+            <p class="is-size-7-touch">{{ animal.description }}</p>
+            <h3 class="is-size-5-desktop m-t-md">Localisation: </h3>
+            <p class="is-size-7-touch">{{ animal.localisation }}</p>
+            <h3 class="is-size-5-desktop m-t-md">Le saviez-vous ?</h3>
+            <p class="is-size-7-touch">{{ animal.spec }}</p>
+        </article>
+    </section>
+    <section id="details__img">
+        <img class="image" [src]="'../assets/images/'+ animal.name + '.jpg'" alt="{{animal.name}}">
+    </section>
+</div>

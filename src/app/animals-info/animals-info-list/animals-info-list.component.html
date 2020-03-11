@@ -1,6 +1,7 @@
-<div *ngFor="let animal of animals">
-    <p>{{ animal.fr_fr }}</p>
-    <a [routerLink]="['/animals-info', animal.name]">Voir</a>
+<div id="animals-info-list">
+    <div class="is-inline-block" *ngFor="let animal of animals">
+        <button class="button is-rounded is-dark m-r-md m-t-lg is-size-7-touch" [routerLink]="['/animals-info', animal.name]" routerLinkActive="active">{{ animal.fr_fr }}</button>
+    </div>
 </div>
 
 <router-outlet></router-outlet>

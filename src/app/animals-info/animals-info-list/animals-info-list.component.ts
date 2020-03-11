@@ -8,9 +8,9 @@ import { Mammals } from '../../../assets/mammals';
 })
 export class AnimalsInfoListComponent implements OnInit {
   animals = Mammals;
+  currentUrlParam: string;
+
   constructor() { }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void { }
 }
