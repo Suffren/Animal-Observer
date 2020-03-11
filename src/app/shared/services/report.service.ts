@@ -7,7 +7,6 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class ReportService {
-  cahedReports: Array<Report> = [];
   reportsUrl = 'api/reports';
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
