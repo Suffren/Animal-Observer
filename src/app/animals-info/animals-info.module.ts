@@ -17,4 +17,4 @@ import { AnimalDetailsComponent } from './animal-details/animal-details.componen
     AnimalsInfoRoutingModule
   ]
 })
-export class AnimalsInfoModuleModule { }
+export class AnimalsInfoModule { }

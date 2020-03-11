@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ReportService } from '../shared/services/report.service';
-import Report from '../shared/interfaces/interfaces';
+import { ReportService } from '../../shared/services/report.service';
+import Report from '../../shared/interfaces/interfaces';
 
 @Component({
   selector: 'app-report-home',

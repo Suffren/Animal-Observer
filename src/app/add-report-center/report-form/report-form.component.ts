@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
-import Report from '../shared/interfaces/interfaces';
+import Report from '../../shared/interfaces/interfaces';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 @Component({
