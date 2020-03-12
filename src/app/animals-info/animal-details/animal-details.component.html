@@ -1,22 +1,24 @@
-<div id="details__content" class="has-text-light" *ngIf="animal">
-    <section>
+<div class="has-text-light" *ngIf="animal">
+    <section id="details__content">
         <article>
             <header>
-                <h2 class="is-size-1-desktop has-text-warning m-t-lg">{{ animal.fr_fr }}</h2>
-                <span class="is-italic is-size-7-touch m-r-lg">Ordre: {{ animal.order }}</span>
-                <span class="is-italic is-size-7-touch m-r-lg">Famille: {{ animal.familly }}</span>
-                <span class="is-italic is-size-7-touch">Taille (H): {{ animal.height }}</span>
+                <h2 class="is-size-1-desktop has-text-warning has-text-weight-bold m-t-lg">{{ animal.fr_fr }}</h2>
+                <div id="animal__carac" class="is-italic is-size-7-touch">
+                    <span class="m-r-lg">Ordre: {{ animal.order }}</span>
+                    <span class="m-r-lg">Famille: {{ animal.familly }}</span>
+                    <span>Taille (H): {{ animal.height }}</span>
+                </div>
             </header>
 
             <h3 class="is-size-5-desktop m-t-md">Description:</h3>
-            <p class="is-size-7-touch">{{ animal.description }}</p>
+            <p class="is-size-7-mobile has-text-grey-lighter">{{ animal.description }}</p>
             <h3 class="is-size-5-desktop m-t-md">Localisation: </h3>
-            <p class="is-size-7-touch">{{ animal.localisation }}</p>
+            <p class="is-size-7-mobile has-text-grey-lighter">{{ animal.localisation }}</p>
             <h3 class="is-size-5-desktop m-t-md">Le saviez-vous ?</h3>
-            <p class="is-size-7-touch">{{ animal.spec }}</p>
+            <p class="is-size-7-mobile has-text-grey-lighter">{{ animal.spec }}</p>
         </article>
     </section>
     <section id="details__img">
-        <img class="image" [src]="'../assets/images/'+ animal.name + '.jpg'" alt="{{animal.name}}">
+        <div [ngStyle]="{'background': '#fff url(../assets/images/' + animal.name + '.jpg) no-repeat center / cover', 'height': '100%', 'width': '100%'}"></div>
     </section>
 </div>
