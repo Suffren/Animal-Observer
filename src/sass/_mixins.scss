@@ -1,5 +1,11 @@
+@import 'src/sass/_variables.scss';
+
 @mixin center_flex {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@mixin full_height-nav {
+    height:  calc(100vh - #{$navheight});
 }
