@@ -17,7 +17,7 @@ export class ReportFormComponent implements OnInit {
     this.reportForm = this.fb.group({
       gender: [null],
       localisation: ['', Validators.required],
-      time: ['', Validators.required],
+      time: ['', [Validators.required, Validators.pattern(/\d{2}\/\d{2}\/\d{4}/)]],
       comment: ['']
     });
   }

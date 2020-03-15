@@ -1,20 +1,26 @@
-.report-home__container {
+@import 'src/sass/_mixins.scss';
+
+.report__home-center {
+    @include center_flex;
+    flex-direction: column;
+    height: calc(100vh - (52px + 200px));
+}
+.report__home-container {
     width: 50%;
     display: block;
 }
-
 :host {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 @media screen and (min-width: 768px) and (max-width: 1360px) {
-    .report-home__container  {
+    .report__home-container  {
         width: 70%;
     }
 }
 @media screen and (max-width: 767px) {
-    .report-home__container  {
+    .report__home-container  {
         width: 90%;
     }
 }

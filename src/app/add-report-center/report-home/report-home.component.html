@@ -1,6 +1,10 @@
-<div class="report-home__container">
+<div class="report__home-container">
     <app-animal-list (onSelectAnimal)="selectAnimal($event)"></app-animal-list>
 
     <app-report-form (onSubmitForm)="submitReport($event)" [hidden]="submitted" *ngIf="showForm"></app-report-form>
-    <div *ngIf="submitted">Envoyé !</div>
+    <div class="report__home-center has-text-primary has-text-weight-semibold" *ngIf="submitted">Envoyé !</div>
+    <div class="report__home-center" *ngIf="!showForm && !submitted">
+        <p class="m-b-md">Vous avez observé un animal parmi cette liste ?</p>
+        <p>Sélectionnez le pour remplir l'observation !</p>
+    </div>
 </div>
