@@ -1,6 +1,7 @@
-<h3>Mammifère observé:</h3>
+<h2 class="is-size-1-desktop has-text-warning has-text-weight-bold m-t-lg">Mammifère observé:</h2>
+
 <div class="animal__list">
-    <div class="animal__elt" *ngFor="let animal of animals">
-        <button class="animal__btn" [ngClass]="{ 'selected': animal.name === selectedAnimal }" (click)="selectAnimal(animal.name)" >{{ animal.fr_fr }}</button>
+    <div class="is-inline-block" *ngFor="let animal of animals">
+        <button class="button is-rounded is-dark m-r-md m-t-lg is-size-7-touch" [ngClass]="{ 'is-warning': animal.name === selectedAnimal }" (click)="selectAnimal(animal.name)" >{{ animal.fr_fr }}</button>
     </div>
 </div>

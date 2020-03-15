@@ -1,8 +1,6 @@
 <div class="report-home__container">
-    <app-animal-list (onSelectAnimal)="selectAnimal($event)" style="width: 30%"></app-animal-list>
+    <app-animal-list (onSelectAnimal)="selectAnimal($event)"></app-animal-list>
 
-    <app-report-form (onSubmitForm)="submitReport($event)" [hidden]="submitted" *ngIf="showForm" style="width: 30%"></app-report-form>
+    <app-report-form (onSubmitForm)="submitReport($event)" [hidden]="submitted" *ngIf="showForm"></app-report-form>
     <div *ngIf="submitted">Envoyé !</div>
-    <a routerLink="/reports" routerLinkActive="active">Voir mes observations</a>
-    <a routerLink="/animals-info" routerLinkActive="active">En savoir plus sur les animaux</a>
 </div>

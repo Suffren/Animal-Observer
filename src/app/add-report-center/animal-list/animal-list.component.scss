@@ -1,27 +1,10 @@
 @import 'src/sass/_variables.scss';
 
+:host {
+    width: 50%;
+}
 .animal__list {
     display: flex;
     flex-wrap: wrap;
-    .animal__elt {
-        width: 9rem;
-        height: 9rem;
-    }
-    .animal__btn {
-        border: 2px solid $primary;
-        color: $primary;
-        width: 8rem;
-        height: 8rem;
-        border-radius: 10px;
-        &:hover {
-            border: 2px solid rgb(23, 133, 78);
-            color: rgb(23, 133, 78);
-        }
-        &.selected {
-            background-color: lightgreen;
-            color: rgb(23, 133, 78);
-            font-weight: bold;
-            border: 2px solid rgb(23, 133, 78);
-        }
-    }
+    justify-content: space-between;
 }

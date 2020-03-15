@@ -1,5 +1,20 @@
 .report-home__container {
+    width: 50%;
+    display: block;
+}
+
+:host {
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+@media screen and (min-width: 768px) and (max-width: 1360px) {
+    .report-home__container  {
+        width: 70%;
+    }
+}
+@media screen and (max-width: 767px) {
+    .report-home__container  {
+        width: 90%;
+    }
 }

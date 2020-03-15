@@ -1,35 +1,35 @@
-<div>
-    <h3>Formulaire:</h3>
+<section class="m-t-xl">
+    <h3 class="is-size-5-desktop m-b-md has-text-warning">Veuillez remplir ce formulaire:</h3>
     <form [formGroup]="reportForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <label for="gender">Sexe supposé de l'animal:</label>
-            <select class="form-control"  id="gender" formControlName="gender">
+        <div class="field">
+            <label class="label has-text-white-ter" for="gender">Sexe supposé de l'animal:</label>
+            <select class="input"  id="gender" formControlName="gender">
                 <option [ngValue]="null" disabled selected>Sexe de l'animal</option>
                 <option *ngFor="let gender of genders" [value]="gender.type">{{gender.fr_fr}}</option>
             </select>
         </div>
 
-        <div class="form-group">
-            <label for="localisation">Lieu*</label>
-            <input type="text" class="form-control" id="localisation" placeholder="Saisir un lieux" formControlName="localisation" required>
-            <div [hidden]="reportForm.get('localisation').valid || reportForm.get('localisation').pristine" class="alert alert-danger">
-                Le lieux est requis
+        <div class="field">
+            <label class="label has-text-white-ter" for="localisation">Lieu*</label>
+            <input type="text" class="input" id="localisation" placeholder="Saisir un lieux" formControlName="localisation" required>
+            <div [hidden]="reportForm.get('localisation').valid || reportForm.get('localisation').pristine" class="has-text-danger is-italic">
+                Le lieu est requis
             </div>
         </div>
 
-        <div class="form-group">
-            <label for="time">Heure*</label>
-            <input type="text" class="form-control" id="time" placeholder="Choisissez une heure" formControlName="time" required>
-            <div [hidden]="reportForm.get('time').valid || reportForm.get('time').pristine" class="alert alert-danger">
-                Une heure est requise
+        <div class="field">
+            <label class="label has-text-white-ter" for="time">Date*</label>
+            <input type="text" class="input" id="time" placeholder="ex: 13/05/2020" formControlName="time" required>
+            <div [hidden]="reportForm.get('time').valid || reportForm.get('time').pristine" class="has-text-danger is-italic">
+                Une date est requise
             </div>
         </div>
 
-        <div class="form-group">
-            <label for="description">Commentaire</label>
-            <textarea class="form-control" cols="4" formControlName="comment"></textarea>
+        <div class="field">
+            <label class="label has-text-white-ter" for="description">Commentaire:</label>
+            <textarea class="textarea" cols="4" formControlName="comment"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-success" [disabled]="!reportForm.valid">Submit</button>
+        <button type="submit" class="button is-primary m-t-lg is-pulled-right" [disabled]="!reportForm.valid">Submit</button>
     </form>
-</div>
+</section>
