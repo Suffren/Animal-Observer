@@ -2,6 +2,8 @@
 
 <div class="animal__list">
     <div class="is-inline-block" *ngFor="let animal of animals">
-        <button class="button is-rounded is-dark m-r-md m-t-lg is-size-7-touch" [ngClass]="{ 'is-warning': animal.name === selectedAnimal }" (click)="selectAnimal(animal.name)" >{{ animal.fr_fr }}</button>
+        <button class="button is-rounded is-dark m-r-md m-t-lg is-size-7-touch" [ngClass]="{ 'is-warning': animal.name === selectedAnimal }" (click)="selectAnimal(animal.name)">
+            {{ animal.fr_fr }}
+        </button>
     </div>
 </div>

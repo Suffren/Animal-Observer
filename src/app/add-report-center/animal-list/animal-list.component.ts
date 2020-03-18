@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Mammals } from '../../../assets/mammals';
+import { AnimalsService } from '../../shared/services/animals.service';
+import Animal from '../../shared/interfaces/interfaces';
 
 @Component({
   selector: 'app-animal-list',
@@ -7,13 +8,17 @@ import { Mammals } from '../../../assets/mammals';
   styleUrls: ['./animal-list.component.scss']
 })
 export class AnimalListComponent implements OnInit {
-  animals = Mammals;
+  animals: Animal[];
   selectedAnimal: string;
   @Output() onSelectAnimal: EventEmitter<string> = new EventEmitter();
 
-  constructor() { }
+  constructor(private animalsService: AnimalsService) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.animalsService.getAnimals().subscribe( animals => {
+      this.animals = animals
+    });
+  }
 
   selectAnimal(animalType: string): void {
     this.selectedAnimal = animalType;

@@ -17,4 +17,8 @@ export class AnimalsService {
     const url = `${this.animalsUrl}/?name=${animal_type}`;
     return this.http.get<Animal>(url);
   }
+
+  getAnimals(): Observable<Animal[]> {
+    return this.http.get<Animal[]>(this.animalsUrl);
+  }
 }

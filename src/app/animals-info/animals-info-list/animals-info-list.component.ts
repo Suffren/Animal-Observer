@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Mammals } from '../../../assets/mammals';
+import { AnimalsService } from '../../shared/services/animals.service';
+import Animal from '../../shared/interfaces/interfaces';
 
 @Component({
   selector: 'app-animals-info-list',
@@ -7,10 +8,14 @@ import { Mammals } from '../../../assets/mammals';
   styleUrls: ['./animals-info-list.component.scss']
 })
 export class AnimalsInfoListComponent implements OnInit {
-  animals = Mammals;
+  animals: Animal[];
   currentUrlParam: string;
 
-  constructor() { }
+  constructor(private animalsService: AnimalsService) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.animalsService.getAnimals().subscribe( animals => {
+      this.animals = animals
+    });
+  }
 }
