@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AnimalsInfoModule } from './animals-info/animals-info.module';
@@ -25,6 +26,11 @@ import { NavigationComponent } from './navigation/navigation.component';
   ],
   imports: [
     BrowserModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDqoh-jJkyhJS_7B9uJtVaBR2WDS7YDYlQ',
+      libraries: ['places'],
+      region: 'FR'
+    }),
     AnimalsInfoModule,
     AddReportModule,
     AppRoutingModule,
