@@ -2,7 +2,7 @@
 @import 'src/sass/_mixins.scss';
 
 body {
-    min-height: 100vh;
+    max-height: 100vh;
     box-sizing: border-box;
     margin: 0;
     background-color: $primary;
