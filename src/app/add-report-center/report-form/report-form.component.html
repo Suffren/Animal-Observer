@@ -10,8 +10,8 @@
         </div>
 
         <div class="field">
-            <label class="label has-text-white-ter" for="localisation">Lieu*</label>
-            <input type="text" class="input" id="localisation" placeholder="Saisir un lieux" formControlName="localisation" required>
+            <label class="label has-text-white-ter" for="localisation">Adresse la plus proche*</label>
+            <input type="text" class="input" (keydown.enter)="$event.preventDefault()" id="localisation" placeholder="Saisissez un lieu" formControlName="localisation" required autocorrect="off" autocapitalize="off" spellcheck="off" #search>
             <div [hidden]="reportForm.get('localisation').valid || reportForm.get('localisation').pristine" class="has-text-danger is-italic">
                 Le lieu est requis
             </div>

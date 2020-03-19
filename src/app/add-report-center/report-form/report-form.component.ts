@@ -1,6 +1,7 @@
-import { Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, NgZone, ElementRef, ViewChild} from '@angular/core';
 import Report from '../../shared/interfaces/interfaces';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { MapsAPILoader } from '@agm/core';
 
 @Component({
   selector: 'app-report-form',
@@ -9,11 +10,17 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 })
 export class ReportFormComponent implements OnInit {
   submitted: boolean = false;
+  address: string;
   genders: Array<object> = [{type: 'male', fr_fr: 'Mâle'}, {type: 'female', fr_fr: 'Femelle'}, {type: 'unknown', fr_fr: 'Je ne sais pas'}];
   reportForm: FormGroup;
   @Output() onSubmitForm: EventEmitter<Report> = new EventEmitter();
+  @ViewChild('search') searchElementRef: ElementRef;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private mapsAPILoader: MapsAPILoader,
+    private ngZone: NgZone
+  ) {
     this.reportForm = this.fb.group({
       gender: [null],
       localisation: ['', Validators.required],
@@ -22,7 +29,24 @@ export class ReportFormComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.mapsAPILoader.load().then(() => {
+
+      let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
+        types: ["address"]
+      });
+
+      autocomplete.addListener("place_changed", () => {
+        this.ngZone.run(() => {
+          let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+
+          if (place.geometry === undefined || place.geometry === null) {
+            return;
+          }
+        });
+      });
+    });
+  }
 
   onSubmit(): void {
     this.submitted = true;
