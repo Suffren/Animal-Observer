@@ -11,9 +11,17 @@
 
         <div class="field">
             <label class="label has-text-white-ter" for="localisation">Adresse la plus proche*</label>
-            <input type="text" class="input" (keydown.enter)="$event.preventDefault()" id="localisation" placeholder="Saisissez un lieu" formControlName="localisation" required autocorrect="off" autocapitalize="off" spellcheck="off" #search>
+            <input id="localisation" type="text" class="input" placeholder="Saisissez un lieu"
+            #search formControlName="localisation" (keyup)="searchPlace()" required>
             <div [hidden]="reportForm.get('localisation').valid || reportForm.get('localisation').pristine" class="has-text-danger is-italic">
                 Le lieu est requis
+            </div>
+            <div class="search-result" *ngIf="flag">
+                <ul>
+                    <li *ngFor="let place of places">
+                        <span (click)="onselectPlace()">{{place.properties.name}}, {{place.properties.postcode}} {{place.properties.city}}</span>
+                    </li>
+                </ul>
             </div>
         </div>
 

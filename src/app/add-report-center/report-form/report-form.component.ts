@@ -1,7 +1,16 @@
-import { Component, OnInit, Output, EventEmitter, NgZone, ElementRef, ViewChild} from '@angular/core';
-import Report from '../../shared/interfaces/interfaces';
+import { Component, OnInit, Output, EventEmitter, ElementRef, ViewChild} from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { MapsAPILoader } from '@agm/core';
+import Report from '../../shared/interfaces/interfaces';
+import Place from '../../shared/interfaces/interfaces';
+import { HttpClient } from '@angular/common/http';
+import { Subject } from 'rxjs';
+import { placesService } from '../../shared/services/places.service';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  filter,
+  flatMap
+} from "rxjs/operators";
 
 @Component({
   selector: 'app-report-form',
@@ -10,7 +19,9 @@ import { MapsAPILoader } from '@agm/core';
 })
 export class ReportFormComponent implements OnInit {
   submitted: boolean = false;
-  address: string;
+  flag: boolean = false;
+  private searchPlaces = new Subject<string>();
+  places: Place[];
   genders: Array<object> = [{type: 'male', fr_fr: 'Mâle'}, {type: 'female', fr_fr: 'Femelle'}, {type: 'unknown', fr_fr: 'Je ne sais pas'}];
   reportForm: FormGroup;
   @Output() onSubmitForm: EventEmitter<Report> = new EventEmitter();
@@ -18,8 +29,8 @@ export class ReportFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private mapsAPILoader: MapsAPILoader,
-    private ngZone: NgZone
+    private http: HttpClient,
+    private placesService: placesService
   ) {
     this.reportForm = this.fb.group({
       gender: [null],
@@ -30,21 +41,15 @@ export class ReportFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.mapsAPILoader.load().then(() => {
-
-      let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
-        types: ["address"]
-      });
-
-      autocomplete.addListener("place_changed", () => {
-        this.ngZone.run(() => {
-          let place: google.maps.places.PlaceResult = autocomplete.getPlace();
-
-          if (place.geometry === undefined || place.geometry === null) {
-            return;
-          }
-        });
-      });
+    this.searchPlaces.pipe(
+      filter(searchText => searchText.length > 5),
+      debounceTime(1500),
+      distinctUntilChanged(), // ignore if next search text is same as previous
+      flatMap(searchText =>  {
+        return this.placesService.search(searchText)
+      })
+    ).subscribe( (res) => {
+      this.places = res
     });
   }
 
@@ -52,5 +57,14 @@ export class ReportFormComponent implements OnInit {
     this.submitted = true;
     this.onSubmitForm.emit(this.reportForm.value);
     this.reportForm.reset();
+  }
+
+  searchPlace() {
+    this.flag = true;
+    this.searchPlaces.next(this.reportForm.value.localisation);
+  }
+
+  onselectPlace() {
+    this.flag = false;
   }
 }

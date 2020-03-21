@@ -8,4 +8,27 @@
 }
 :host {
     width: 100%;
+    & .field {
+        position: relative;
+    }
+}
+
+.search-result {
+    position: absolute;
+    top: calc(40px + 34px);
+    left: 0;
+    z-index: 200;
+    background-color: white;
+    width: 100%;
+    & ul {
+        border: 1px solid lightgray;
+    }
+    & li {
+        border-bottom: 2px solid lightgray;
+        padding: 3px;
+        cursor: pointer;
+    }
+    & li :hover {
+        font-weight: bold;
+    }
 }

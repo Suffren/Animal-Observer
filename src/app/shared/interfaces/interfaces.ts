@@ -21,3 +21,7 @@ export default interface Animal {
     spec: string,
     image: string
 }
+
+export default interface Place {
+    features: Array<any>
+}
