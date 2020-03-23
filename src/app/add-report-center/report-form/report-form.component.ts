@@ -19,6 +19,7 @@ import {
 export class ReportFormComponent implements OnInit {
   submitted: boolean = false;
   flag: boolean = false;
+  noResult: boolean = false;
   private searchPlaces = new Subject<string>();
   places: Place[];
   genders: Array<object> = [{type: 'male', fr_fr: 'Mâle'}, {type: 'female', fr_fr: 'Femelle'}, {type: 'unknown', fr_fr: 'Je ne sais pas'}];
@@ -47,6 +48,8 @@ export class ReportFormComponent implements OnInit {
         return this.placesService.search(searchText)
       })
     ).subscribe( (res) => {
+      if(res.length === 0)
+        this.noResult = true;
       this.places = res
     });
   }
@@ -59,6 +62,7 @@ export class ReportFormComponent implements OnInit {
 
   searchPlace() {
     if(this.reportForm.value.localisation.length > 0) {
+      this.noResult = false;
       this.flag = true;
       this.searchPlaces.next(this.reportForm.value.localisation);
     } else {
