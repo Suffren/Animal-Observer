@@ -8,8 +8,7 @@ import { placesService } from '../../shared/services/places.service';
 import {
   debounceTime,
   distinctUntilChanged,
-  filter,
-  flatMap
+  flatMap,
 } from "rxjs/operators";
 
 @Component({
@@ -42,8 +41,7 @@ export class ReportFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.searchPlaces.pipe(
-      filter(searchText => searchText.length > 5),
-      debounceTime(1500),
+      debounceTime(1000),
       distinctUntilChanged(), // ignore if next search text is same as previous
       flatMap(searchText =>  {
         return this.placesService.search(searchText)
@@ -60,8 +58,12 @@ export class ReportFormComponent implements OnInit {
   }
 
   searchPlace() {
-    this.flag = true;
-    this.searchPlaces.next(this.reportForm.value.localisation);
+    if(this.reportForm.value.localisation.length > 0) {
+      this.flag = true;
+      this.searchPlaces.next(this.reportForm.value.localisation);
+    } else {
+      this.flag = false;
+    }
   }
 
   onselectPlace() {
