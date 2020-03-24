@@ -47,10 +47,15 @@ export class ReportFormComponent implements OnInit {
       flatMap(searchText =>  {
         return this.placesService.search(searchText)
       })
-    ).subscribe( (res) => {
-      if(res.length === 0)
+    ).subscribe( (places: any) => {
+      if(places.length === 0)
         this.noResult = true;
-      this.places = res
+
+      this.places = places.map(place => {
+        return  (
+          (place.properties.name ? place.properties.name : place.properties.street)+(place.properties.city ? (', ' + place.properties.city) : '')
+        )
+      })
     });
   }
 

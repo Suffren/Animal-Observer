@@ -22,8 +22,8 @@
                     <li>Pas de résultats</li>
                 </ul>
                 <ul>
-                    <li *ngFor="let place of places">
-                        <span (click)="onselectPlace()">{{place.properties.name}}, {{place.properties.postcode}} {{place.properties.city}}</span>
+                    <li *ngFor="let place of places"
+                        (click)="onselectPlace()" innerHTML="{{ place | highlight : reportForm.get('localisation').value }}">
                     </li>
                 </ul>
             </div>
