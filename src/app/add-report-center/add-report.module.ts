@@ -5,8 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AnimalListComponent } from './animal-list/animal-list.component';
 import { ReportHomeComponent } from './report-home/report-home.component';
 import { ReportFormComponent } from './report-form/report-form.component';
-
 import { AddReportRoutingModule } from './add-report-routing.module';
+import { PipesModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import { AddReportRoutingModule } from './add-report-routing.module';
   imports: [
     CommonModule,
     AddReportRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PipesModule
   ]
 })
 export class AddReportModule { }

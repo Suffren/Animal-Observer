@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AnimalsInfoModule } from './animals-info/animals-info.module';
 import { AddReportModule } from './add-report-center/add-report.module';
+import { PipesModule } from './shared/shared.module';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './shared/services/in-memory-data.service';
@@ -29,6 +30,7 @@ import { NavigationComponent } from './navigation/navigation.component';
     AddReportModule,
     AppRoutingModule,
     HttpClientModule,
+    PipesModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 500, passThruUnknownUrl: true })
