@@ -25,10 +25,10 @@
     }
     & li {
         border-bottom: 2px solid lightgray;
-        padding: 3px;
+        padding: 3px 8px;
         cursor: pointer;
     }
-    & li :hover {
-        font-weight: bold;
+    & li:hover {
+        background-color: lightgray;
     }
 }
