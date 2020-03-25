@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, ElementRef, ViewChild} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import Report from '../../shared/interfaces/interfaces';
 import Place from '../../shared/interfaces/interfaces';
@@ -25,7 +25,6 @@ export class ReportFormComponent implements OnInit {
   genders: Array<object> = [{type: 'male', fr_fr: 'Mâle'}, {type: 'female', fr_fr: 'Femelle'}, {type: 'unknown', fr_fr: 'Je ne sais pas'}];
   reportForm: FormGroup;
   @Output() onSubmitForm: EventEmitter<Report> = new EventEmitter();
-  @ViewChild('search') searchElementRef: ElementRef;
 
   constructor(
     private fb: FormBuilder,

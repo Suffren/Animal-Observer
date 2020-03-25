@@ -12,7 +12,7 @@
         <div class="field">
             <label class="label has-text-white-ter" for="localisation">Adresse la plus proche*</label>
             <input id="localisation" type="text" class="input" placeholder="Saisissez un lieu"
-            #search formControlName="localisation" (keyup)="searchPlace()" required>
+            formControlName="localisation" (keyup)="searchPlace()" required>
             <div [hidden]="reportForm.get('localisation').valid || reportForm.get('localisation').pristine" class="has-text-danger is-italic">
                 Le lieu est requis
             </div>
