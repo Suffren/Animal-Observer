@@ -75,7 +75,8 @@ export class ReportFormComponent implements OnInit {
     }
   }
 
-  onselectPlace() {
+  onselectPlace(place: string) {
+    this.reportForm.patchValue({ localisation: place });
     this.flag = false;
   }
 }

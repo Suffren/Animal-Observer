@@ -23,7 +23,7 @@
                 </ul>
                 <ul>
                     <li *ngFor="let place of places"
-                        (click)="onselectPlace()" innerHTML="{{ place | highlight : reportForm.get('localisation').value }}">
+                        (click)="onselectPlace(place)" innerHTML="{{ place | highlight : reportForm.get('localisation').value }}">
                     </li>
                 </ul>
             </div>
