@@ -17,6 +17,11 @@ const routes: Routes = [
     data: { title: 'Mes observations' }
   },
   {
+    path: '404',
+    component: PageNotFoundComponent,
+    data: { title: 'Mes observations' }
+  },
+  {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
