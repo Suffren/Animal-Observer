@@ -1,5 +1,8 @@
 @import 'src/sass/_mixins.scss';
-
-.center_flex {
+:host div {
+    min-height: calc(100vh - 52px);
+    height: 100%;
+    display: block;
     @include center_flex;
+    flex-direction: column;
 }
