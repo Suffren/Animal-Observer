@@ -16,6 +16,11 @@ const animalsInfoRoutes: Routes = [
           {
             path: ':animal_type',
             component: AnimalDetailsComponent
+          },
+          {
+            path: '',
+            redirectTo: '/animals-info/squirrel',
+            pathMatch: 'full'
           }
         ]
       }
