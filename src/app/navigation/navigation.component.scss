@@ -4,3 +4,10 @@
     color: $tertiary;
     font-weight: 600;
 }
+#navbarBasicExample.is-active {
+    background-color: black;
+    & .navbar-item:hover {
+        background-color: $primary;
+        color: $secondary;
+    }
+}

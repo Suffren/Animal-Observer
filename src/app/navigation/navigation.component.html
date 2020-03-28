@@ -3,19 +3,25 @@
         <a class="navbar-item" routerLink="/home">
             <img class="menu-icon" src="../assets/icons/binoculars.svg" width="112" height="28">
         </a>
+
+        <a role="button" class="navbar-burger burger" [ngClass]="{ 'is-active': menuSelected }" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" (click)="menuSelected = !menuSelected">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
     </div>
 
-    <div id="navbarBasicExample" class="navbar-menu is-success">
+    <div id="navbarBasicExample" class="navbar-menu is-success" [ngClass]="{ 'is-active': menuSelected }" >
         <div class="navbar-end">
-          <a class="navbar-item" routerLink="/report" routerLinkActive="active">
+          <a class="navbar-item" routerLink="/report" routerLinkActive="active" (click)="menuSelected = false">
             RECENSER
           </a>
 
-          <a class="navbar-item" routerLink="/reports" routerLinkActive="active">
+          <a class="navbar-item" routerLink="/reports" routerLinkActive="active" (click)="menuSelected = false">
             MES OBSERVATIONS
           </a>
 
-          <a class="navbar-item" routerLink="/animals-info" routerLinkActive="active">
+          <a class="navbar-item" routerLink="/animals-info" routerLinkActive="active" (click)="menuSelected = false">
             ANIMAUX
           </a>
 
