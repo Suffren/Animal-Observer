@@ -1,4 +1,5 @@
 @import 'src/sass/_mixins.scss';
+@import 'src/sass/_variables.scss';
 
 .report__home-center {
     @include center_flex;
@@ -13,6 +14,9 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    min-height: calc(100vh - 52px);
+    height: 100%;
+    background-color: $primary;
 }
 @media screen and (min-width: 768px) and (max-width: 1360px) {
     .report__home-container  {
