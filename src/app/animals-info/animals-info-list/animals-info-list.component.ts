@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimalsService } from '../../shared/services/animals.service';
 import Animal from '../../shared/interfaces/interfaces';
+import { tap } from "rxjs/operators";
 
 @Component({
   selector: 'app-animals-info-list',
@@ -10,11 +11,15 @@ import Animal from '../../shared/interfaces/interfaces';
 export class AnimalsInfoListComponent implements OnInit {
   animals: Animal[];
   currentUrlParam: string;
+  isLoading: boolean = false;
 
   constructor(private animalsService: AnimalsService) { }
 
   ngOnInit(): void {
-    this.animalsService.getAnimals().subscribe( animals => {
+    this.isLoading = true;
+    this.animalsService.getAnimals().pipe(
+      tap(animals => this.isLoading = false)
+    ).subscribe( animals => {
       this.animals = animals
     });
   }

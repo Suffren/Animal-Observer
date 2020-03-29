@@ -1,10 +1,11 @@
-<div class="report__home-container">
-    <app-animal-list (onSelectAnimal)="selectAnimal($event)"></app-animal-list>
+<div class="report__home-container" [hidden]="animalListIsLoading">
+    <app-animal-list (onSelectAnimal)="selectAnimal($event)" (onPending)="onPending($event)"></app-animal-list>
 
     <app-report-form (onSubmitForm)="submitReport($event)" [hidden]="submitted" *ngIf="showForm"></app-report-form>
     <div class="report__home-center has-text-primary has-text-weight-semibold" *ngIf="submitted">Envoyé !</div>
-    <div class="report__home-center" *ngIf="!showForm && !submitted">
+    <div class="report__home-center" *ngIf="!showForm && !submitted && !animalListIsLoading">
         <p class="m-b-md">Vous avez observé un animal parmi cette liste ?</p>
         <p>Sélectionnez le pour remplir l'observation !</p>
     </div>
 </div>
+<div class="has-text-grey-lighter center_flex" style="height: 80vh;" *ngIf="animalListIsLoading">Chargement...</div>

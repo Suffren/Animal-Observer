@@ -15,4 +15,5 @@
         </div>
     </div>
 </div>
-<div class="center_flex has-text-grey-lighter full_h_nav" [hidden]="reports.length > 0">Loading...</div>
+<div class="center_flex has-text-grey-lighter full_h_nav" *ngIf="isLoading">Chargement...</div>
+<div class="center_flex has-text-grey-lighter full_h_nav" *ngIf="reports.length === 0 && !isLoading">Pas de résultats</div>

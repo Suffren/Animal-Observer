@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AnimalsService } from '../../shared/services/animals.service';
 import Animal from '../../shared/interfaces/interfaces';
+import { tap } from "rxjs/operators";
 
 @Component({
   selector: 'app-animal-list',
@@ -10,12 +11,20 @@ import Animal from '../../shared/interfaces/interfaces';
 export class AnimalListComponent implements OnInit {
   animals: Animal[];
   selectedAnimal: string;
+  isLoading: boolean;
   @Output() onSelectAnimal: EventEmitter<string> = new EventEmitter();
+  @Output() onPending: EventEmitter<boolean> = new EventEmitter();
 
   constructor(private animalsService: AnimalsService) { }
 
   ngOnInit(): void {
-    this.animalsService.getAnimals().subscribe( animals => {
+    this.isLoading = true;
+    this.animalsService.getAnimals().pipe(
+      tap(animals => {
+        this.isLoading = false;
+        this.onPending.emit(this.isLoading)
+      })
+    ).subscribe( animals => {
       this.animals = animals
     });
   }

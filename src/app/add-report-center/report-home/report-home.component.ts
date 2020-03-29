@@ -10,6 +10,7 @@ import Report from '../../shared/interfaces/interfaces';
 export class ReportHomeComponent implements OnInit {
   showForm: boolean = false;
   submitted: boolean = false;
+  animalListIsLoading: boolean = true;
   animalType: string;
   previousAnimal: string;
 
@@ -18,6 +19,10 @@ export class ReportHomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void { }
+
+  onPending(event: boolean) {
+    this.animalListIsLoading = event;
+  }
 
   selectAnimal(animalType: string): void {
     this.animalType = animalType;
