@@ -59,6 +59,7 @@ export class ReportFormComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.reportForm.value.time = this.reportForm.value.time.split("/").reverse().join("-");
     this.submitted = true;
     this.onSubmitForm.emit(this.reportForm.value);
     this.reportForm.reset();
