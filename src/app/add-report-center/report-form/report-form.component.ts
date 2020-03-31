@@ -40,6 +40,7 @@ export class ReportFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.reportForm.enable();
     this.searchPlaces.pipe(
       debounceTime(1000),
       distinctUntilChanged(), // ignore if next search text is same as previous
@@ -59,6 +60,7 @@ export class ReportFormComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.reportForm.disable();
     this.reportForm.value.time = this.reportForm.value.time.split("/").reverse().join("-");
     this.submitted = true;
     this.onSubmitForm.emit(this.reportForm.value);
