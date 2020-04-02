@@ -1,0 +1,23 @@
+@import 'src/sass/_mixins.scss';
+@import 'src/sass/_variables.scss';
+:host {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: calc(100vh - 52px);
+    height: 100%;
+    background-color: $primary;
+}
+.admin-container {
+    width: 50%;
+    display: block;
+}
+#admin-nav .active {
+    color: $primary;
+    background-color: $tertiary
+}
+@media screen and (min-width: 768px) and (max-width: 1360px) {
+    .admin-container  {
+        width: 80%;
+    }
+}
