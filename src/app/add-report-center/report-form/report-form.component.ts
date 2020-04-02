@@ -4,7 +4,7 @@ import Report from '../../shared/interfaces/interfaces';
 import Place from '../../shared/interfaces/interfaces';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
-import { placesService } from '../../shared/services/places.service';
+import { placesService } from '../places.service';
 import {
   debounceTime,
   distinctUntilChanged,

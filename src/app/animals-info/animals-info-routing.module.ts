@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { InfosComponent } from './infos/infos.component';
 import { AnimalsInfoListComponent } from './animals-info-list/animals-info-list.component';
 import { AnimalDetailsComponent } from './animal-details/animal-details.component';
-import { AnimalAllowedService } from '../shared/services/animal-allowed.service';
+import { AnimalAllowedService } from './animal-allowed.service';
 
 const animalsInfoRoutes: Routes = [
   {
