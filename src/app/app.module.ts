@@ -7,6 +7,7 @@ import { AnimalsInfoModule } from './animals-info/animals-info.module';
 import { AddReportModule } from './add-report-center/add-report.module';
 import { PipesModule } from './shared/shared.module';
 import { AdminModule } from './admin/admin.module';
+import { AuthModule } from './auth/auth.module';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './shared/services/in-memory-data.service';
@@ -30,6 +31,7 @@ import { NavigationComponent } from './navigation/navigation.component';
     AnimalsInfoModule,
     AddReportModule,
     AdminModule,
+    AuthModule,
     AppRoutingModule,
     HttpClientModule,
     PipesModule,
