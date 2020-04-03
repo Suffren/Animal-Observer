@@ -1,0 +1,5 @@
+<p>{{message}}</p>
+<p>
+  <button class="button is-success" (click)="login()"  *ngIf="!authService.isLoggedIn">Se connecter</button>
+  <button class="button is-danger" (click)="logout()" *ngIf="authService.isLoggedIn">Se déconnecter</button>
+</p>
