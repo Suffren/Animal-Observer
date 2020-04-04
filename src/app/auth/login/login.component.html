@@ -1,5 +1,21 @@
-<p>{{message}}</p>
-<p>
-  <button class="button is-success" (click)="login()"  *ngIf="!authService.isLoggedIn">Se connecter</button>
-  <button class="button is-danger" (click)="logout()" *ngIf="authService.isLoggedIn">Se déconnecter</button>
-</p>
+<div class="login-container">
+  <h1 class="has-text-warning is-size-3-tablet has-text-centered">Se connecter</h1>
+  <p class="m-md has-text-centered">{{message}}</p>
+
+  <div class="field">
+    <label class="label has-text-white-ter">Email</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="john-doe@mail.com">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label has-text-white-ter">Mot de passe</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="Votre mot de passe">
+    </div>
+  </div>
+
+  <button class="button is-success is-fullwidth m-t-lg" (click)="login()"  *ngIf="!authService.isLoggedIn">Se connecter</button>
+  <button class="button is-danger is-fullwidth m-t-lg" (click)="logout()" *ngIf="authService.isLoggedIn">Se déconnecter</button>
+</div>
