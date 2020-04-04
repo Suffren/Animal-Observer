@@ -2,20 +2,28 @@
   <h1 class="has-text-warning is-size-3-tablet has-text-centered">Se connecter</h1>
   <p class="m-md has-text-centered">{{message}}</p>
 
-  <div class="field">
-    <label class="label has-text-white-ter">Email</label>
-    <div class="control">
-      <input class="input" type="text" placeholder="john-doe@mail.com">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="field">
+      <label class="label has-text-white-ter">Email</label>
+      <div class="control">
+        <input class="input" type="text" placeholder="john-doe@mail.com" id="email" formControlName="email">
+        <div [hidden]="loginForm.get('email').valid || loginForm.get('email').pristine" class="has-text-danger is-italic">
+          Un email valide est requis
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="field">
-    <label class="label has-text-white-ter">Mot de passe</label>
-    <div class="control">
-      <input class="input" type="text" placeholder="Votre mot de passe">
+    <div class="field">
+      <label class="label has-text-white-ter">Mot de passe</label>
+      <div class="control">
+        <input class="input" type="text" placeholder="Votre mot de passe" id="password" formControlName="password">
+        <div [hidden]="loginForm.get('password').valid || loginForm.get('password').pristine" class="has-text-danger is-italic">
+          Un mot de passe valide est requis
+        </div>
+      </div>
     </div>
-  </div>
 
-  <button class="button is-success is-fullwidth m-t-lg" (click)="login()"  *ngIf="!authService.isLoggedIn">Se connecter</button>
-  <button class="button is-danger is-fullwidth m-t-lg" (click)="logout()" *ngIf="authService.isLoggedIn">Se déconnecter</button>
+    <button class="button is-success is-fullwidth m-t-lg" (click)="login()"  *ngIf="!authService.isLoggedIn" [disabled]="!loginForm.valid">Se connecter</button>
+    <button class="button is-danger is-fullwidth m-t-lg" (click)="logout()" *ngIf="authService.isLoggedIn">Se déconnecter</button>
+  </form>
 </div>
