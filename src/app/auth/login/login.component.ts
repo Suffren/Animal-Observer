@@ -47,6 +47,4 @@ export class LoginComponent {
     this.authService.logout();
     this.setMessage();
   }
-
-  onSubmit() { }
 }

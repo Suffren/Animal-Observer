@@ -2,7 +2,7 @@
   <h1 class="has-text-warning is-size-3-tablet has-text-centered">Se connecter</h1>
   <p class="m-md has-text-centered">{{message}}</p>
 
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
     <div class="field">
       <label class="label has-text-white-ter">Email</label>
       <div class="control">
@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <button class="button is-success is-fullwidth m-t-lg" (click)="login()"  *ngIf="!authService.isLoggedIn" [disabled]="!loginForm.valid">Se connecter</button>
+    <button class="button is-success is-fullwidth m-t-lg" *ngIf="!authService.isLoggedIn" [disabled]="!loginForm.valid">Se connecter</button>
     <button class="button is-danger is-fullwidth m-t-lg" (click)="logout()" *ngIf="authService.isLoggedIn">Se déconnecter</button>
   </form>
 </div>
