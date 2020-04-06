@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AnimalsInfoModule } from './animals-info/animals-info.module';
@@ -17,6 +17,8 @@ import { ReportsComponent } from './reports/reports.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
 import { NavigationComponent } from './navigation/navigation.component';
+
+import { fakeBackendAuthService } from './shared/services/fake-backend-auth.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,7 @@ import { NavigationComponent } from './navigation/navigation.component';
     // and returns simulated server responses.
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 500, passThruUnknownUrl: true })
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: fakeBackendAuthService, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
