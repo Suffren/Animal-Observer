@@ -31,16 +31,19 @@ export class LoginComponent {
   }
 
   login() {
-    this.message = 'En attente de connection';
+    this.message = 'En attente de connection...';
 
-    this.authService.login().subscribe(() => {
-      this.setMessage();
-      if (this.authService.isLoggedIn) {
-        const redirectUrl = '/home';
+    this.authService.login(this.loginForm.value).subscribe(
+      () => {
+        this.setMessage();
+        if (this.authService.isLoggedIn) {
+          const redirectUrl = '/admin';
 
-        this.router.navigate([redirectUrl]);
-      }
-    });
+          this.router.navigate([redirectUrl]);
+        }
+      },
+      (error) => this.message = error
+    );
   }
 
   logout() {
