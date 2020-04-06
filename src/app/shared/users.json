@@ -1,0 +1,11 @@
+[
+    {
+        "id": "1",
+        "email": "a@a.fr",
+        "username": "Suffren",
+        "password": "123",
+        "firstName": "Régis",
+        "lastName": "Letiv",
+        "token": "fake-token"
+    }
+]
