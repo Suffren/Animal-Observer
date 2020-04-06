@@ -25,3 +25,12 @@ export default interface Animal {
 export default interface Place {
     features: Array<any>
 }
+
+export default interface User {
+    id: number;
+    username: string;
+    password: string;
+    firstName: string;
+    lastName: string;
+    token: string;
+}
