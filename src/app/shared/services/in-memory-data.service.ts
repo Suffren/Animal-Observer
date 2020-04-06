@@ -1,5 +1,6 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import Report from '../interfaces/interfaces';
+import  Users  from  '../users.json';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -139,16 +140,8 @@ export class InMemoryDataService implements InMemoryDbService {
       }
     ];
 
-    const users = [
-      {
-        "id": 1,
-        "username": "Suffren",
-        "password": "123",
-        "firstName": "Régis",
-        "lastName": "Letiv",
-        "token": "fake-token"
-      }
-    ]
+    const users = Users;
+
     return {reports, animals, users};
   }
 
