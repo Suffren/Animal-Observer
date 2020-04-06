@@ -138,7 +138,18 @@ export class InMemoryDataService implements InMemoryDbService {
         "spec": "Les renards ont un rôle important dans la régulation des rongeurs en campagne, tels que les campagnols, les mulots, les souris, ou encore les rats. Ils en consomment des milliers chaque année, ce qui en fait des auxiliaire de cultures efficaces pour les agriculteurs permettant de limiter les dégâts que font ces rongeurs aux récoltes. Ils ont également un rôle important dans la lutte contre la maladie de Lyme en consommant les rongeurs sur lesquels vivent les tiques pouvant transmettre cette maladie."
       }
     ];
-    return {reports, animals};
+
+    const users = [
+      {
+        "id": 1,
+        "username": "Suffren",
+        "password": "123",
+        "firstName": "Régis",
+        "lastName": "Letiv",
+        "token": "fake-token"
+      }
+    ]
+    return {reports, animals, users};
   }
 
   // Overrides the genId method to ensure that a report always has an id
