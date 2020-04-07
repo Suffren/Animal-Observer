@@ -32,6 +32,17 @@
           <a class="navbar-item" routerLink="/login" routerLinkActive="active" (click)="menuSelected = false" *ngIf="!(isLoggedIn$ | async)">
             SE CONNECTER
           </a>
+
+          <div class="navbar-item has-dropdown is-hoverable" *ngIf="isLoggedIn$ | async">
+            <a class="navbar-link">
+              Exemple user <!-- TODO -->
+            </a>
+            <div class="navbar-dropdown is-boxed" style="right: 0;">
+              <a class="navbar-item" style="padding: 5px 10px;" (click)="logout()">
+                Se déconnecter
+              </a>
+            </div>
+          </div>
         </div>
     </div>
 </nav>
