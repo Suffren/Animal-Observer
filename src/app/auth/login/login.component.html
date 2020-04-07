@@ -23,7 +23,6 @@
       </div>
     </div>
 
-    <button class="button is-success is-fullwidth m-t-lg" *ngIf="!authService.isLoggedIn" [disabled]="!loginForm.valid">Se connecter</button>
-    <button class="button is-danger is-fullwidth m-t-lg" (click)="logout()" *ngIf="authService.isLoggedIn">Se déconnecter</button>
+    <button class="button is-success is-fullwidth m-t-lg" [disabled]="!loginForm.valid">Se connecter</button>
   </form>
 </div>
