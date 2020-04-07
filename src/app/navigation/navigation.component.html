@@ -13,11 +13,11 @@
 
     <div id="navbarBasicExample" class="navbar-menu is-success" [ngClass]="{ 'is-active': menuSelected }" >
         <div class="navbar-end">
-          <a class="navbar-item" routerLink="/report" routerLinkActive="active" (click)="menuSelected = false">
+          <a class="navbar-item" routerLink="/report" routerLinkActive="active" (click)="menuSelected = false" *ngIf="isLoggedIn$ | async">
             RECENSER
           </a>
 
-          <a class="navbar-item" routerLink="/reports" routerLinkActive="active" (click)="menuSelected = false">
+          <a class="navbar-item" routerLink="/reports" routerLinkActive="active" (click)="menuSelected = false" *ngIf="isLoggedIn$ | async">
             MES OBSERVATIONS
           </a>
 
@@ -25,12 +25,12 @@
             ANIMAUX
           </a>
 
-          <a class="navbar-item" routerLink="/admin" routerLinkActive="active" (click)="menuSelected = false">
+          <a class="navbar-item" routerLink="/admin" routerLinkActive="active" (click)="menuSelected = false" *ngIf="isLoggedIn$ | async">
             ADMIN
           </a>
 
-          <a class="navbar-item">
-            A PROPOS
+          <a class="navbar-item" routerLink="/login" routerLinkActive="active" (click)="menuSelected = false" *ngIf="!(isLoggedIn$ | async)">
+            SE CONNECTER
           </a>
         </div>
     </div>

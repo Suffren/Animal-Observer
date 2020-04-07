@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { AuthService } from './auth.service';
-
+import { map, take } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -11,7 +12,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): boolean {
+  ): Observable<boolean> {
     let url: string = state.url;
     return this.checkLogin(url);
   }
@@ -19,16 +20,23 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   canActivateChild(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): boolean {
+  ): Observable<boolean> {
     return this.canActivate(route, state);
   }
 
-  checkLogin(url: string): boolean {
-    if (this.authService.isLoggedIn) { return true; }
+  checkLogin(url: string): Observable<boolean> {
+    return this.authService.isLoggedIn
+      .pipe(
+        take(1),
+        map((isLoggedIn: boolean) => {
+          if (!isLoggedIn) {
+            this.authService.redirectUrl = url;
+            this.router.navigate(['/login']);
+            return false;
+          }
 
-    this.authService.redirectUrl = url;
-
-    this.router.navigate(['/login']);
-    return false;
+          return true;
+        })
+      )
   }
 }

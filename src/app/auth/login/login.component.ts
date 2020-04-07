@@ -11,7 +11,6 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 export class LoginComponent {
   message: string;
   loginForm: FormGroup;
-  submitted: boolean = false;
 
   constructor(
     public authService: AuthService,
