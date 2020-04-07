@@ -18,16 +18,10 @@ export class LoginComponent {
     public router: Router,
     private fb: FormBuilder,
   ) {
-    this.setMessage();
-
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.pattern(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/)]],
       password: ['', Validators.required]
     });
-  }
-
-  setMessage() {
-    this.message = (this.authService.isLoggedIn ? 'Connecté' : 'Déconnecté');
   }
 
   login() {
@@ -35,7 +29,6 @@ export class LoginComponent {
 
     this.authService.login(this.loginForm.value).subscribe(
       () => {
-        this.setMessage();
         if (this.authService.isLoggedIn) {
           const redirectUrl = this.authService.redirectUrl || 'report';
 
@@ -48,6 +41,5 @@ export class LoginComponent {
 
   logout() {
     this.authService.logout();
-    this.setMessage();
   }
 }
