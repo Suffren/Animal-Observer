@@ -37,7 +37,7 @@ export class LoginComponent {
       () => {
         this.setMessage();
         if (this.authService.isLoggedIn) {
-          const redirectUrl = '/admin';
+          const redirectUrl = this.authService.redirectUrl || 'report';
 
           this.router.navigate([redirectUrl]);
         }
