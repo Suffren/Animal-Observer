@@ -16,7 +16,6 @@ export class fakeBackendAuthService implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     if (request.url ==='authentification' && request.method === 'POST') {
-
       return this.userService.getAll().pipe(
         switchMap( users => {
           let filteredUsers = users.filter(user => {
@@ -37,6 +36,22 @@ export class fakeBackendAuthService implements HttpInterceptor {
             return of(new HttpResponse({ status: 200, body: body }));
           } else {
             return throwError({ message: 'Email ou mot de passe incorrect' });
+          }
+        })
+      );
+    }
+
+    if (request.url ==='register' && request.method === 'POST') {
+      return this.userService.getAll().pipe(
+        switchMap( users => {
+          let filteredUsers = users.filter(user => {
+            return user.email === request.body.email;
+          });
+
+          if (filteredUsers.length === 0) {
+            return of(new HttpResponse({ status: 200, body: request.body }));
+          } else {
+            return throwError({ message: 'Cet email est déjà associé à un compte' });
           }
         })
       );
