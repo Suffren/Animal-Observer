@@ -33,6 +33,10 @@
             SE CONNECTER
           </a>
 
+          <a class="navbar-item" routerLink="/register" routerLinkActive="active" (click)="menuSelected = false" *ngIf="!(isLoggedIn$ | async)">
+            CRÉER UN COMPTE
+          </a>
+
           <div class="navbar-item has-dropdown is-hoverable" *ngIf="isLoggedIn$ | async">
             <a class="navbar-link">
               Exemple user <!-- TODO -->
