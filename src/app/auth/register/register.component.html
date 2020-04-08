@@ -1,0 +1,58 @@
+<div class="register-container">
+    <h1 class="has-text-warning is-size-3-tablet has-text-centered">S'inscrire</h1>
+    <p class="m-md has-text-centered">{{message || 'Bienvenue'}}</p>
+  
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+      <div class="field">
+        <label class="label has-text-white-ter">Prénom</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Saisissez votre prénom" id="firstname" formControlName="firstname">
+          <div [hidden]="registerForm.get('firstname').valid || registerForm.get('firstname').pristine" class="has-text-danger is-italic">
+            Un prénom valide est requis
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label has-text-white-ter">Nom</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Saisissez votre nom" id="lastname" formControlName="lastname">
+          <div [hidden]="registerForm.get('lastname').valid || registerForm.get('lastname').pristine" class="has-text-danger is-italic">
+            Un nom valide est requis
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label has-text-white-ter">Pseudonyme</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Saisissez votre pseudonyme" id="username" formControlName="username">
+          <div [hidden]="registerForm.get('username').valid || registerForm.get('username').pristine" class="has-text-danger is-italic">
+            Un pseudonyme est requis
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label has-text-white-ter">Email</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="john-doe@mail.com" id="email" formControlName="email">
+          <div [hidden]="registerForm.get('email').valid || registerForm.get('email').pristine" class="has-text-danger is-italic">
+            Un email valide est requis
+          </div>
+        </div>
+      </div>
+  
+      <div class="field">
+        <label class="label has-text-white-ter">Mot de passe</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Votre mot de passe" id="password" formControlName="password">
+          <div [hidden]="registerForm.get('password').valid || registerForm.get('password').pristine" class="has-text-danger is-italic">
+            Un mot de passe valide est requis
+          </div>
+        </div>
+      </div>
+
+      <button class="button is-success is-fullwidth m-t-lg" [disabled]="!registerForm.valid">Valider</button>
+    </form>
+  </div>

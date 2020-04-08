@@ -1,0 +1,14 @@
+@import 'src/sass/_mixins.scss';
+@import 'src/sass/_variables.scss';
+
+:host {
+    background-color: $primary;
+}
+.register-container {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 7%;
+    border-radius: 10px;
+    padding: 25px 35px 35px 35px;
+    background-color: #0A0A0A;
+}
