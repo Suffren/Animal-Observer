@@ -6,7 +6,7 @@
     <div class="field">
       <label class="label has-text-white-ter">Email</label>
       <div class="control">
-        <input class="input" type="text" placeholder="john-doe@mail.com" id="email" formControlName="email">
+        <input class="input" type="email" placeholder="john-doe@mail.com" id="email" formControlName="email">
         <div [hidden]="loginForm.get('email').valid || loginForm.get('email').pristine" class="has-text-danger is-italic">
           Un email valide est requis
         </div>
@@ -16,7 +16,7 @@
     <div class="field">
       <label class="label has-text-white-ter">Mot de passe</label>
       <div class="control">
-        <input class="input" type="text" placeholder="Votre mot de passe" id="password" formControlName="password">
+        <input class="input" type="password" placeholder="Votre mot de passe" id="password" formControlName="password">
         <div [hidden]="loginForm.get('password').valid || loginForm.get('password').pristine" class="has-text-danger is-italic">
           Un mot de passe valide est requis
         </div>
