@@ -22,7 +22,7 @@ const routes: Routes = [
   {
     path: '404',
     component: PageNotFoundComponent,
-    data: { title: 'Mes observations' }
+    data: { title: 'Introuvable' }
   },
   {
     path: '',
