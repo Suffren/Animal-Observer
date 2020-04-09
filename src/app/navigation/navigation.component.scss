@@ -6,7 +6,7 @@
 }
 #navbarBasicExample.is-active {
     background-color: black;
-    & .navbar-item:hover {
+    & .navbar-item:hover, .navbar-link:hover {
         background-color: $primary;
         color: $secondary;
     }
