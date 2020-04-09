@@ -10,6 +10,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 })
 export class RegisterComponent {
   message: string;
+  pending: boolean = false;
   registerForm: FormGroup;
 
   constructor(
@@ -27,13 +28,18 @@ export class RegisterComponent {
   }
 
   register() {
+    this.pending = true;
     this.message = "En attente d'inscription...";
 
     this.authService.register(this.registerForm.value).subscribe(
       () => {
+        this.pending = false;
           this.router.navigate(['/login']);
       },
-      (error) => this.message = error
+      (error) =>{
+        this.pending = false;
+        this.message = error;
+      }
     );
   }
 

@@ -23,6 +23,6 @@
       </div>
     </div>
 
-    <button class="button is-success is-fullwidth m-t-lg" [disabled]="!loginForm.valid">Se connecter</button>
+    <button class="button is-success is-fullwidth m-t-lg" [ngClass]="{ 'is-loading': pending }" [disabled]="!loginForm.valid || pending">Se connecter</button>
   </form>
 </div>

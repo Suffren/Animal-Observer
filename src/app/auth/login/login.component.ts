@@ -10,6 +10,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 })
 export class LoginComponent {
   message: string;
+  pending: boolean = false;
   loginForm: FormGroup;
 
   constructor(
@@ -24,6 +25,7 @@ export class LoginComponent {
   }
 
   login() {
+    this.pending = true;
     this.message = 'En attente de connection...';
 
     this.authService.login(this.loginForm.value).subscribe(
@@ -33,8 +35,12 @@ export class LoginComponent {
 
           this.router.navigate([redirectUrl]);
         }
+        this.pending = false;
       },
-      (error) => this.message = error
+      (error) => {
+        this.pending = false;
+        this.message = error;
+      }
     );
   }
 

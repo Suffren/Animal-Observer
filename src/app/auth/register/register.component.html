@@ -53,6 +53,6 @@
         </div>
       </div>
 
-      <button class="button is-success is-fullwidth m-t-lg" [disabled]="!registerForm.valid">Valider</button>
+      <button class="button is-success is-fullwidth m-t-lg" [ngClass]="{ 'is-loading': pending }" [disabled]="!registerForm.valid || pending">Valider</button>
     </form>
   </div>
