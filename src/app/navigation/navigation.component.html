@@ -39,7 +39,7 @@
 
           <div class="navbar-item has-dropdown is-hoverable" *ngIf="isLoggedIn$ | async">
             <a class="navbar-link">
-              Exemple user <!-- TODO -->
+              {{ currentUser.username }}
             </a>
             <div class="navbar-dropdown is-boxed" style="right: 0;">
               <a class="navbar-item" style="padding: 5px 10px;" (click)="logout()">
