@@ -12,7 +12,7 @@
         <div class="field">
             <label class="label has-text-white-ter" for="localisation">Adresse la plus proche*</label>
             <input id="localisation" type="text" class="input" placeholder="Saisissez un lieu"
-            formControlName="localisation" (keyup)="searchPlace()" required>
+            formControlName="localisation" (keyup)="searchPlace()">
             <div [hidden]="reportForm.get('localisation').valid || reportForm.get('localisation').pristine" class="has-text-danger is-italic">
                 Le lieu est requis
             </div>
@@ -31,7 +31,7 @@
 
         <div class="field">
             <label class="label has-text-white-ter" for="time">Date*</label>
-            <input type="text" class="input" id="time" placeholder="ex: 13/05/2020" formControlName="time" required>
+            <input type="text" class="input" id="time" placeholder="ex: 13/05/2020" formControlName="time">
             <div [hidden]="reportForm.get('time').valid || reportForm.get('time').pristine" class="has-text-danger is-italic">
                 Une date au format jj/mm/aaaa est requise
             </div>
