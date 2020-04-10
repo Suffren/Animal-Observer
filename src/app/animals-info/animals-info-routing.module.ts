@@ -17,6 +17,7 @@ const animalsInfoRoutes: Routes = [
           {
             path: ':animal_type',
             component: AnimalDetailsComponent,
+            data: { title: 'Animaux' },
             resolve: {
               animal: AnimalAllowedService
             }

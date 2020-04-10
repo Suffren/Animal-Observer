@@ -14,6 +14,7 @@ const adminRoutes: Routes = [
       {
         path: '',
         canActivateChild: [AuthGuard],
+        data: { title: 'Administrer' },
         children: [
           {
             path: 'reports',
