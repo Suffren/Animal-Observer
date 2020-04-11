@@ -24,4 +24,13 @@ export class ManageUsersComponent implements OnInit {
       this.users = users;
     })
   }
+
+  deleteUser(userId: number) {
+    let confirm = window.confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?');
+    if(confirm) {
+      this.userService.delete(userId).subscribe( () => {
+        this.getUsers();
+      });
+    }
+  }
 }

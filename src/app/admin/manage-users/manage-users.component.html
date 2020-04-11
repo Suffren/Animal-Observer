@@ -12,6 +12,9 @@
                     <p>{{ user.isAdmin === 'true' ? 'Administateur' : 'Utilisateur' }}</p>
                 </div>
             </div>
+            <div class="media-right" *ngIf="(user.isAdmin === 'false') && isLoading" (click)="deleteUser(user.id)" >
+                <a class="delete"></a>
+            </div>
         </div>
     </div>
 </div>

@@ -6,3 +6,9 @@
 .loading_h {
     height: calc(100vh - 72px - #{$navheight})
 }
+.media-right .delete {
+    background-color: #d80000;
+}
+.media-right .delete:hover {
+    background-color: red;
+}
