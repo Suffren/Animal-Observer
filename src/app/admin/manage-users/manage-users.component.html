@@ -1,1 +1,18 @@
-<p>manage-users works!</p>
+<div class="container" style="margin-top: 2rem;" *ngIf="!isLoading">
+    <div class="notification is-warning" *ngFor="let user of users">
+        <div class="media">
+            <figure class="media-left">
+                <img class="image is-64x64" [src]="(user.isAdmin === 'true') ? '../assets/icons/admin.svg' : '../assets/icons/user.svg'" alt="Utilisateur">
+            </figure>
+            <div class="media-content">
+                <div class="content">
+                    <p>
+                        <strong>{{ user.firstname }} {{ user.lastname }}</strong>&nbsp;est {{ user.username }}:<i> {{ user.email }}</i>
+                    </p>
+                    <p>{{ user.isAdmin === 'true' ? 'Administateur' : 'Utilisateur' }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="center_flex has-text-grey-lighter loading_h" [hidden]="!isLoading">Chargement...</div>

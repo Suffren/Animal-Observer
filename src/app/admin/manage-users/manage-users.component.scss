@@ -1,0 +1,8 @@
+@import 'src/sass/_variables.scss';
+
+:host {
+    width: 50%;
+}
+.loading_h {
+    height: calc(100vh - 72px - #{$navheight})
+}
