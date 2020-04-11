@@ -1,11 +1,32 @@
 [
     {
         "id": "1",
-        "email": "a@a.fr",
+        "email": "s@s.fr",
         "username": "Suffren",
         "password": "123",
-        "firstName": "Régis",
-        "lastName": "Letiv",
+        "firstname": "Régis",
+        "lastname": "Letiv",
+        "isAdmin": "false",
+        "token": "fake-token"
+    },
+    {
+        "id": "2",
+        "email": "a@a.fr",
+        "username": "TheAdmin",
+        "password": "admin",
+        "firstname": "John",
+        "lastname": "Doe",
+        "isAdmin": "true",
+        "token": "fake-token"
+    },
+    {
+        "id": "3",
+        "email": "j@j.fr",
+        "username": "JeDu",
+        "password": "123",
+        "firstname": "Jean",
+        "lastname": "Dupond",
+        "isAdmin": "false",
         "token": "fake-token"
     }
 ]
