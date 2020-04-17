@@ -31,7 +31,8 @@ export default interface User {
     email: string;
     username: string;
     password: string;
-    firstName: string;
-    lastName: string;
+    firstname: string;
+    lastname: string;
     token: string;
+    isAdmin: string;
 }

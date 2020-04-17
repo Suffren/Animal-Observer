@@ -28,8 +28,10 @@ export class fakeBackendAuthService implements HttpInterceptor {
             let body = {
                 id: user.id,
                 username: user.username,
-                firstName: user.firstName,
-                lastName: user.lastName,
+                firstname: user.firstname,
+                lastname: user.lastname,
+                email: user.email,
+                isAdmin: user.isAdmin,
                 token: 'fake-jwt-token'
             };
 
