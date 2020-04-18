@@ -12,8 +12,17 @@
                     <p>{{ user.isAdmin === 'true' ? 'Administateur' : 'Utilisateur' }}</p>
                 </div>
             </div>
-            <div class="media-right" *ngIf="(currentUser.isAdmin === 'true')" (click)="deleteUser(user.id)" >
-              <a class="delete"></a>
+            <div class="is-flex" style="flex-direction: column;">
+              <button class="button is-small media-right is-danger" *ngIf="(currentUser.isAdmin === 'true')" (click)="deleteUser(user.id)">
+                <span class="icon is-small">
+                  <i class="fas fa-times"></i>
+                </span>
+              </button>
+              <button class="button is-small media-right m-t-sm" *ngIf="(currentUser.isAdmin === 'true')" disabled="disabled">
+                <span class="icon is-small">
+                  <i class="fas fa-pen"></i>
+                </span>
+              </button>
             </div>
         </div>
     </div>
