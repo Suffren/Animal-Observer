@@ -11,7 +11,7 @@ import { AuthModule } from './auth/auth.module';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './shared/services/in-memory-data.service';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppComponent } from './app.component';
 import { ReportsComponent } from './reports/reports.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -37,6 +37,7 @@ import { fakeBackendAuthService } from './shared/services/fake-backend-auth.serv
     AppRoutingModule,
     HttpClientModule,
     PipesModule,
+    FontAwesomeModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 500, passThruUnknownUrl: true })
