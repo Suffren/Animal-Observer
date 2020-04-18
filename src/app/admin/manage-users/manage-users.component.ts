@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../shared/services/user.service';
+import { AuthService } from '../../auth/auth.service';
 import User from '../../shared/interfaces/interfaces'
 
 @Component({
@@ -10,10 +11,15 @@ import User from '../../shared/interfaces/interfaces'
 export class ManageUsersComponent implements OnInit {
   users:  User[];
   isLoading: boolean = false;
+  currentUser: User;
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private userService: UserService,
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
+    this.authService.currentUserValue.subscribe(user => this.currentUser = user)
     this.getUsers();
   }
 
