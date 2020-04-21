@@ -11,14 +11,16 @@ export class InMemoryDataService implements InMemoryDbService {
     const reports = [
       {
         "id": 1,
+        "user_id": 2,
         "animal_type": "bat",
         "gender": "",
-        "comment": "J'en ai aperçu quand je suis tombé dans un puit, proche de chez moi.",
-        "localisation": "Saint-brieuc",
+        "comment": "J'en ai aperçu après être tombé dans un puit, chez mes parents.",
+        "localisation": "Gotham City",
         "time": "2019-10-22T01:00:00-05:00"
       },
       {
         "id": 12,
+        "user_id": 3,
         "animal_type": "rabbit",
         "gender": "",
         "comment": "Pas sur du sexe de l'animal",
@@ -27,14 +29,16 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         "id": 5,
+        "user_id": 2,
         "animal_type": "squirrel",
         "gender": "male",
-        "comment": "Apercu à coté de chez moi, en haut d'un chêne",
+        "comment": "Je l'ai eu ce prêt.",
         "localisation": "Brest",
         "time": "2020-02-19T01:00:00-05:00"
       },
       {
         "id": 9,
+        "user_id": 2,
         "animal_type": "deer",
         "gender": "",
         "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -43,6 +47,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         "id": 4,
+        "user_id": 3,
         "animal_type": "boar",
         "gender": "female",
         "comment": "",
@@ -51,6 +56,7 @@ export class InMemoryDataService implements InMemoryDbService {
       } ,
       {
         "id": 23,
+        "user_id": 1,
         "animal_type": "fox",
         "gender": "female",
         "comment": "",
@@ -62,6 +68,7 @@ export class InMemoryDataService implements InMemoryDbService {
     const animals = [
       {
         "id": 1,
+        "user_id": 2,
         "name": "squirrel",
         "fr_fr": "Écureuil",
         "order": "Rongeurs",

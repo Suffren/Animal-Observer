@@ -1,5 +1,6 @@
 export default interface Report {
     id: number,
+    user_id: number,
     animal_type: string,
     gender: string,
     localisation: string,

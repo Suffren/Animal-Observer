@@ -3,6 +3,7 @@ import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor } fr
 import { Observable, of, throwError } from 'rxjs';
 import  User  from  '../interfaces/interfaces';
 import { UserService } from './user.service';
+import { ReportService } from './report.service';
 import { switchMap } from 'rxjs/operators';
 
 @Injectable({
@@ -11,7 +12,10 @@ import { switchMap } from 'rxjs/operators';
 export class fakeBackendAuthService implements HttpInterceptor {
   users: User[];
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private userService: UserService,
+    private reportService: ReportService
+  ) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
@@ -57,6 +61,18 @@ export class fakeBackendAuthService implements HttpInterceptor {
           }
         })
       );
+    }
+
+    if (request.url.includes('user_reports') && request.method === 'GET') {
+      return this.reportService.fetchReports().pipe(
+        switchMap( reports => {
+          const userId = request.url.match(/\d/)[0];
+          let reportsByUserId = reports.filter(report => {
+            return report.user_id === parseInt(userId);
+          });
+          return of(new HttpResponse({ status: 200, body: reportsByUserId }));
+        })
+      )
     }
 
     return next.handle(request);
