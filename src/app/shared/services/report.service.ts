@@ -19,10 +19,18 @@ export class ReportService {
     return this.http.get<Report[]>(this.reportsUrl);
   }
 
+  getReportsByUser(user_id: number): Observable<Report[]> {
+    const url = `user_reports/${user_id}`;
+    return this.http.get<Report[]>(url).pipe(
+      tap(_ => console.log(`fetched reports by user id=${user_id}`)),
+      catchError(this.handleError<Report[]>(`getReportsByUser id=${user_id}`))
+    );
+  }
+
   getReport(id: number): Observable<Report> {
     const url = `${this.reportsUrl}/${id}`;
     return this.http.get<Report>(url).pipe(
-      tap(_ => console.log(`fetched hero id=${id}`)),
+      tap(_ => console.log(`fetched report id=${id}`)),
       catchError(this.handleError<Report>(`getReport id=${id}`))
     );
   }
