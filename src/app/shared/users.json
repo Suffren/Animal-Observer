@@ -1,6 +1,6 @@
 [
     {
-        "id": "1",
+        "id": 1,
         "email": "s@s.fr",
         "username": "Suffren",
         "password": "123",
@@ -10,7 +10,7 @@
         "token": "fake-token"
     },
     {
-        "id": "2",
+        "id": 2,
         "email": "a@a.fr",
         "username": "TheAdmin",
         "password": "admin",
@@ -20,7 +20,7 @@
         "token": "fake-token"
     },
     {
-        "id": "3",
+        "id": 3,
         "email": "j@j.fr",
         "username": "JeDu",
         "password": "123",

@@ -53,7 +53,7 @@ export class InMemoryDataService implements InMemoryDbService {
         "comment": "",
         "localisation": "Brest",
         "time": "2020-04-22T01:00:00-05:00"
-      } ,
+      },
       {
         "id": 23,
         "user_id": 1,
