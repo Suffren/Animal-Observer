@@ -11,6 +11,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 export class LoginComponent {
   message: string;
   pending: boolean = false;
+  error: boolean;
   loginForm: FormGroup;
 
   constructor(
@@ -25,6 +26,7 @@ export class LoginComponent {
   }
 
   login() {
+    this.error = false;
     this.pending = true;
     this.message = 'En attente de connection...';
 
@@ -38,6 +40,7 @@ export class LoginComponent {
         this.pending = false;
       },
       (error) => {
+        this.error = true;
         this.pending = false;
         this.message = error;
       }

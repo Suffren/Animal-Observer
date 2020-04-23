@@ -1,6 +1,6 @@
 <div class="login-container">
   <h1 class="has-text-warning is-size-3-tablet has-text-centered">Connection</h1>
-  <p class="m-md has-text-centered">{{message || 'Bienvenue'}}</p>
+  <p class="m-md has-text-centered" [ngClass]="{ 'has-text-danger': error }">{{message || 'Bienvenue'}}</p>
 
   <form [formGroup]="loginForm" (ngSubmit)="login()">
     <div class="field">
