@@ -1,6 +1,9 @@
 @import 'src/sass/_variables.scss';
 
 :host {
+    width: 100%;
+}
+:host .container {
     width: 50%;
 }
 .loading_h {
@@ -11,4 +14,9 @@
 }
 .media-right .delete:hover {
     background-color: red;
+}
+@media screen and (max-width: 1360px) {
+    :host .container  {
+        width: 80%;
+    }
 }
