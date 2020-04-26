@@ -64,4 +64,14 @@ export class ReportsComponent implements OnInit {
       new Date(nextReport.time).getTime() - new Date(previousReport.time).getTime()
     );
   }
+
+  deleteReport(report: Report) {
+    let confirm = window.confirm('Êtes-vous sûr de vouloir supprimer cette observation ?');
+    console.log(report)
+    if(confirm) {
+      this.reportService.deleteReport(report.id).subscribe( () => {
+        this.getReports();
+      });
+    }
+  }
 }
