@@ -12,6 +12,18 @@
                     <i>{{ report.comment || 'Pas de commentaire' }}</i>
                 </div>
             </div>
+            <div class="is-flex" style="flex-direction: column;">
+                <button class="button is-small media-right is-danger" *ngIf="(currentUser.isAdmin === 'true') && currentUrl === '/admin/reports'">
+                  <span class="icon is-small">
+                    <i class="fas fa-times"></i>
+                  </span>
+                </button>
+                <button class="button is-small media-right m-t-sm" *ngIf="(currentUser.isAdmin === 'true') && currentUrl === '/admin/reports'" disabled="disabled">
+                  <span class="icon is-small">
+                    <i class="fas fa-pen"></i>
+                  </span>
+                </button>
+              </div>
         </div>
     </div>
 </div>
