@@ -33,6 +33,10 @@ export class ReportsComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoading = true;
+    this.getReports();
+  }
+
+  getReports() {
     this.currentUrl = this.route.url;
 
     this.authService.currentUserValue.subscribe( user => {
