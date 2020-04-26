@@ -49,6 +49,14 @@ export class ReportService {
     );
   }
 
+  deleteReport (reportId: number): Observable<Report> {
+    const url = `${this.reportsUrl}/${reportId}`;
+    return this.http.delete(url).pipe(
+      tap((newReport: Report) => console.log(`delete report w/ id=${newReport.id}`)),
+      catchError(this.handleError<Report>('deleteReport'))
+    );
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
