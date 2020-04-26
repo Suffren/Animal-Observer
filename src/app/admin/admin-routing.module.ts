@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
-import { ManageReportsComponent } from './manage-reports/manage-reports.component';
+import { ReportsComponent } from '../reports/reports.component';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { AuthGuard } from '../auth/auth.guard';
 
@@ -18,7 +18,7 @@ const adminRoutes: Routes = [
         children: [
           {
             path: 'reports',
-            component: ManageReportsComponent
+            component: ReportsComponent
           },
           {
             path: 'users',
