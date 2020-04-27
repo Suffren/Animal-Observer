@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { throwError, BehaviorSubject, Observable } from 'rxjs';
 import { tap, catchError, switchMap } from 'rxjs/operators';
-import User from '../shared/interfaces/interfaces';
+import { User } from '../shared/interfaces/interfaces';
 import { UserService } from '../shared/services/user.service';
 
 

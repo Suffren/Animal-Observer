@@ -1,4 +1,4 @@
-export default interface Report {
+export interface Report {
     id: number,
     user_id: number,
     animal_type: string,
@@ -8,7 +8,7 @@ export default interface Report {
     comment: string
 }
 
-export default interface Animal {
+export interface Animal {
     id: number,
     name: string,
     fr_fr: string,
@@ -23,11 +23,11 @@ export default interface Animal {
     image: string
 }
 
-export default interface Place {
+export interface Place {
     features: Array<any>
 }
 
-export default interface User {
+export interface User {
     id: number;
     email: string;
     username: string;

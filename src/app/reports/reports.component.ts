@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import Report from '../shared/interfaces/interfaces';
-import User from '../shared/interfaces/interfaces';
+import { Report, User } from '../shared/interfaces/interfaces';
 
 import { ReportService } from '../shared/services/report.service';
 import { AuthService } from '../auth/auth.service';

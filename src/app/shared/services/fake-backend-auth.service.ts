@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
-import  User  from  '../interfaces/interfaces';
+import { User } from  '../interfaces/interfaces';
 import { UserService } from './user.service';
 import { ReportService } from './report.service';
 import { switchMap } from 'rxjs/operators';

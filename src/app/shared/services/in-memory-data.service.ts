@@ -1,5 +1,5 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import Report from '../interfaces/interfaces';
+import { Report } from '../interfaces/interfaces';
 import  Users  from  '../users.json';
 import { Injectable } from '@angular/core';
 

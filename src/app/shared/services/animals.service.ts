@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import Animal from '../interfaces/interfaces';
+import { Animal } from '../interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root'

@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import Report from '../../shared/interfaces/interfaces';
-import Place from '../../shared/interfaces/interfaces';
+import { Report, Place } from '../../shared/interfaces/interfaces';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { placesService } from '../places.service';

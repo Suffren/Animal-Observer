@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimalsService } from '../../shared/services/animals.service';
-import Animal from '../../shared/interfaces/interfaces';
+import { Animal } from '../../shared/interfaces/interfaces';
 import { tap } from "rxjs/operators";
 
 @Component({
