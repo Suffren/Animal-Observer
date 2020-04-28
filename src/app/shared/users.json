@@ -6,7 +6,7 @@
         "password": "123",
         "firstname": "Régis",
         "lastname": "Letiv",
-        "isAdmin": "false",
+        "isAdmin": false,
         "token": "fake-token"
     },
     {
@@ -16,7 +16,7 @@
         "password": "admin",
         "firstname": "John",
         "lastname": "Doe",
-        "isAdmin": "true",
+        "isAdmin": true,
         "token": "fake-token"
     },
     {
@@ -26,7 +26,7 @@
         "password": "123",
         "firstname": "Jean",
         "lastname": "Dupond",
-        "isAdmin": "false",
+        "isAdmin": false,
         "token": "fake-token"
     }
 ]

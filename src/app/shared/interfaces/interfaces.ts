@@ -35,5 +35,5 @@ export interface User {
     firstname: string;
     lastname: string;
     token: string;
-    isAdmin: string;
+    isAdmin: boolean;
 }

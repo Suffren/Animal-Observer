@@ -30,7 +30,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
       take(1),
       map(user => {
         if(user) {
-          if(route.data.admin && route.data.admin && user.isAdmin === 'false') {
+          if(route.data.admin && route.data.admin && user.isAdmin === false) {
             this.router.navigate(['/home']);
             return false;
           }

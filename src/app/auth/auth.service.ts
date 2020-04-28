@@ -47,7 +47,7 @@ export class AuthService {
   }
 
   register(user: User) {
-    return this.http.post<User>('register', { ...user, isAdmin: 'false' }).pipe(
+    return this.http.post<User>('register', { ...user, isAdmin: false }).pipe(
       switchMap( user => this.userService.register(user)),
       catchError( (error: HttpErrorResponse) => {
         return throwError(error.message || "Problème de serveur");

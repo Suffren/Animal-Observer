@@ -13,12 +13,12 @@
                 </div>
             </div>
             <div class="is-flex" style="flex-direction: column;">
-                <button class="button is-small media-right is-danger" *ngIf="(currentUser.isAdmin === 'true') && currentUrl === '/admin/reports'" (click)="deleteReport(report)">
+                <button class="button is-small media-right is-danger" *ngIf="currentUser.isAdmin && currentUrl === '/admin/reports'" (click)="deleteReport(report)">
                   <span class="icon is-small">
                     <i class="fas fa-times"></i>
                   </span>
                 </button>
-                <button class="button is-small media-right m-t-sm" *ngIf="(currentUser.isAdmin === 'true') && currentUrl === '/admin/reports'" disabled="disabled">
+                <button class="button is-small media-right m-t-sm" *ngIf="currentUser.isAdmin && currentUrl === '/admin/reports'" disabled="disabled">
                   <span class="icon is-small">
                     <i class="fas fa-pen"></i>
                   </span>

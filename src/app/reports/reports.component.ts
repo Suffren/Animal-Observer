@@ -41,7 +41,7 @@ export class ReportsComponent implements OnInit {
     this.authService.currentUserValue.subscribe( user => {
       this.currentUser = user;
 
-      if(this.currentUser.isAdmin === 'true' && this.currentUrl === '/admin/reports') {
+      if(this.currentUser.isAdmin && this.currentUrl === '/admin/reports') {
         this.reportService.fetchReports().pipe(
           tap(reports => this.isLoading = false)
         ).subscribe( (reports) => {
