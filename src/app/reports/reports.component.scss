@@ -1,7 +1,17 @@
 @import 'src/sass/_variables.scss';
+
 :host {
-    min-height: calc(100vh - 52px);
-    height: 100%;
-    display: block;
-    background-color: $primary;
+    width: 100%;
+}
+:host .container {
+    width: 50%;
+    padding: 15px 0px;
+}
+.loading_h {
+    height: calc(100vh - 72px - #{$navheight})
+}
+@media screen and (max-width: 1360px) {
+    :host .container  {
+        width: 80%;
+    }
 }

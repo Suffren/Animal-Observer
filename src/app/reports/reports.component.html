@@ -1,5 +1,5 @@
-<div class="container" style="padding: 20px;" *ngIf="reports.length > 0">
-    <h1 class="is-size-5-desktop m-b-md has-text-light">Mes observations:</h1>
+<div class="container" *ngIf="reports.length > 0">
+    <h1 class="is-size-5-desktop m-b-md has-text-light">Observations:</h1>
     <div class="notification is-warning" *ngFor="let report of reports">
         <div class="media">
             <figure class="media-left">
@@ -27,5 +27,5 @@
         </div>
     </div>
 </div>
-<div class="center_flex has-text-grey-lighter full_h_nav" *ngIf="isLoading">Chargement...</div>
-<div class="center_flex has-text-grey-lighter full_h_nav" *ngIf="reports.length === 0 && !isLoading">Pas de résultats</div>
+<div class="center_flex has-text-grey-lighter loading_h" *ngIf="isLoading">Chargement...</div>
+<div class="center_flex has-text-grey-lighter loading_h" *ngIf="reports.length === 0 && !isLoading">Pas de résultats</div>
