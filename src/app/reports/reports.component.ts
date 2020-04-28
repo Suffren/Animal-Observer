@@ -66,7 +66,7 @@ export class ReportsComponent implements OnInit {
 
   deleteReport(report: Report) {
     let confirm = window.confirm('Êtes-vous sûr de vouloir supprimer cette observation ?');
-    console.log(report)
+
     if(confirm) {
       this.reportService.deleteReport(report.id).subscribe( () => {
         this.getReports();
