@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { AuthService } from './auth.service';
-import { map, take } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { map, take, mergeMap } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { User } from '../shared/interfaces/interfaces';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate, CanActivateChild {
+
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(
@@ -26,9 +29,14 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   }
 
   checkLogin(url: string, route: ActivatedRouteSnapshot): Observable<boolean> {
-    return this.authService.currentUserValue.pipe(
+    return this.authService.isLoggedIn.pipe(
       take(1),
-      map(user => {
+      mergeMap( (isLoggedIn) => {
+        if(isLoggedIn)
+          return this.authService.currentUserValue;
+        return of(false);
+      }),
+      map((user: User) => {
         if(user) {
           if(route.data.admin && route.data.admin && user.isAdmin === false) {
             this.router.navigate(['/home']);
