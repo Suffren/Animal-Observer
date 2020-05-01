@@ -23,13 +23,6 @@ describe('AppComponent', () => {
   it(`should have as title 'angular-observer'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-observer');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('angular-observer app is running!');
+    expect(app.title).toEqual('Animal observer');
   });
 });
