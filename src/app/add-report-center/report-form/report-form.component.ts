@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Report, Place } from '../../shared/interfaces/interfaces';
-import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { placesService } from '../places.service';
 import {
@@ -27,7 +26,6 @@ export class ReportFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private http: HttpClient,
     private placesService: placesService
   ) {
     this.reportForm = this.fb.group({
