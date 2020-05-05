@@ -6,37 +6,46 @@ import { Observable, of } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-    reportsUrl = 'api/users';
+    usersUrl = 'api/users';
     httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
 
     constructor(private http: HttpClient) { }
 
-    getAll() {
-      return this.http.get<User[]>(`${this.reportsUrl}`);
+    getAll(): Observable<User[]> {
+      return this.http.get<User[]>(`${this.usersUrl}`);
     }
 
-    getById(id: number) {
-      const url = `${this.reportsUrl}/${id}`;
-      return this.http.get<User>(url);
-    }
-
-    register(user: User) {
-      return this.http.post(this.reportsUrl, user, this.httpOptions).pipe(
-        tap((newUser: User) => console.log(`added user w/ id=${newUser.id}`)),
-        catchError(this.handleError<User>('addUser'))
+    getById(userId: number): Observable<User> {
+      const url = `${this.usersUrl}/${userId}`;
+      return this.http.get<User>(url).pipe(
+        tap(user_id => console.log(`get user by his id=${user_id}`)),
+        catchError(this.handleError<User>(`getById id=${userId}`))
       );
     }
 
-    update(user: User) {
-      const url = `${this.reportsUrl}/${user.id}`;
-      return this.http.put(url, user, this.httpOptions);
+    register(user: User): Observable<User> {
+      return this.http.post(this.usersUrl, user, this.httpOptions).pipe(
+        tap((newUser: User) => console.log(`register user id=${newUser.id}`)),
+        catchError(this.handleError<User>('register'))
+      );
     }
 
-    delete(id: number) {
-      const url = `${this.reportsUrl}/${id}`;
-      return this.http.delete(url);
+    update(user: User): Observable<User> {
+      const url = `${this.usersUrl}/${user.id}`;
+      return this.http.put(url, user, this.httpOptions).pipe(
+        tap((user: User) => console.log(`update user w/ id=${user.id}`)),
+        catchError(this.handleError<User>('update'))
+      );
+    }
+
+    delete(id: number): Observable<User> {
+      const url = `${this.usersUrl}/${id}`;
+      return this.http.delete(url).pipe(
+        tap((user: User) => console.log(`delete user id=${user.id}`)),
+        catchError(this.handleError<User>('delete'))
+      );
     }
 
     private handleError<T> (operation = 'operation', result?: T) { // TODO: create a specific service
