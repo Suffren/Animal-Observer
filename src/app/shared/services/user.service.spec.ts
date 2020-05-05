@@ -53,4 +53,29 @@ describe('UserService', () => {
       expect(response).toEqual(usersResponse);
     });
   });
+
+  describe('getById', () => {
+    it('should return an user', () => {
+      const user = {
+        "id": 1,
+        "email": "j@j.jr",
+        "username": "JD",
+        "password": "qwerty",
+        "firstname": "John ",
+        "lastname": "Doe",
+        "isAdmin": false,
+        "token": "fake-token"
+      };
+
+      let response;
+      spyOn(service, 'getById').and.returnValue(of(user));
+
+      service.getById(1).subscribe(res => {
+        response = res;
+      });
+
+      expect(service.getById).toHaveBeenCalledWith(1);
+      expect(response).toEqual(user);
+    });
+  });
 });
