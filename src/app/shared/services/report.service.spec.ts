@@ -50,4 +50,21 @@ describe('ReportService', () => {
       expect(response).toEqual(reports);
     });
   });
+
+  describe('getReport', () => {
+    const report = reports[0];
+
+    it('should return a report', () => {
+
+      let response;
+      spyOn(service, 'getReport').and.returnValue(of(reports[0]));
+
+      service.getReport(1).subscribe(res => {
+        response = res;
+      });
+
+      expect(service.getReport).toHaveBeenCalledWith(1);
+      expect(response).toEqual(report);
+    });
+  });
 });
