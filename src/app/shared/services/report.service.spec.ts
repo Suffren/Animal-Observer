@@ -84,5 +84,15 @@ describe('ReportService', () => {
       expect(service.getReportsByUser).toHaveBeenCalledWith(2);
       expect(response).toEqual(report);
     });
+
+    it('should return undefined if not found', () => {
+
+      let response;
+      service.getReportsByUser(14).subscribe(res => {
+        response = res;
+      });
+
+      expect(response).not.toBeDefined();
+    });
   });
 });
