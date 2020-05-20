@@ -35,6 +35,7 @@ describe('ReportService', () => {
 
   it('should be created', () => {
     expect(service).toBeTruthy();
+    expect(service.reportsUrl).toEqual('api/reports');
   });
 
   describe('fetchReports', () => {
