@@ -68,4 +68,21 @@ describe('ReportService', () => {
       expect(response).toEqual(report);
     });
   });
+
+  describe('getReportsByUser', () => {
+    const report = [reports[0]];
+
+    it('should return a report for specific user', () => {
+
+      let response;
+      spyOn(service, 'getReportsByUser').and.returnValue(of(report));
+
+      service.getReportsByUser(2).subscribe(res => {
+        response = res;
+      });
+
+      expect(service.getReportsByUser).toHaveBeenCalledWith(2);
+      expect(response).toEqual(report);
+    });
+  });
 });
