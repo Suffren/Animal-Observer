@@ -95,4 +95,20 @@ describe('ReportService', () => {
       expect(response).not.toBeDefined();
     });
   });
+
+  describe('addReport', () => {
+    const report = reports[0];
+
+    fit('should return the added report', () => {
+
+      let response;
+      spyOn(service, 'addReport').and.returnValue(of(report));
+
+      service.addReport(report).subscribe(res => {
+        response = res;
+      });
+
+      expect(response).toEqual(report);
+    });
+  });
 });
