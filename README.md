@@ -10,3 +10,5 @@
 * Webpack
 * Responsive app
 * In-memory database
+
+![alt text](src/assets/images/angular-obs.jpg "Animals page")
