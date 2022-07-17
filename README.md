@@ -1,7 +1,7 @@
 # Animal Observer
 
 ## Overview
-**Animal Observer**, prototype web app to report certain animals in order to identify them.
+**Animal Observer**, prototype web app to report animals in order to classify and localised them.
 
 #### Keywords
 * Angular
